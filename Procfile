@@ -1,1 +1,1 @@
-web: gunicorn. lalba.wsgi
+web: gunicorn lalba.wsgi
