@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafeteria l'Alba</title>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="{% url 'home' %}">HOME</a>
+            </li>
+            <li>
+                <a href="{% url 'home' %}">ABOUT</a>
+            </li>
+            <li>
+                <a href="">MENU</a>
+            </li>
+            <li>
+                <a href="">BOOKINGS</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li>
+                <a href="{% url 'account_logout' %}">LOG OUT</a>
+            </li>
+            {% else %}
+            <li>
+                <a href="{% url 'account_signup' %}">SIGN UP</a>
+            </li>
+            <li>
+                <a href="{% url 'account_login' %}">LOG IN</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+    
+</body>
+</html>
