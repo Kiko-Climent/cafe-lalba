@@ -13,11 +13,20 @@
                 <a href="/">HOME</a>
             </li>
             <li>
-                <a href="/reservations">RESERVATIONS</a>
+                <a href="/reservation">RESERVATION</a>
             </li>
+            {% if user.is_authenticated %}
+            <li>
+                <a href="/logout">LOG OUT</a>
+            </li>
+            {% else %}
             <li>
                 <a href="/signup">SIGN UP</a>
             </li>
+            <li>
+                <a href="/signin">SIGN IN</a>
+            </li>
+            {% endif %}
         </ul>
     </nav>
 
