@@ -3,7 +3,7 @@ name: Epic (Café l'Alba)
 about: Define the topics
 title: 'EPIC: <TITLE>'
 labels: ''
-assignees: ''
+assignees: Kiko-Climent
 
 ---
 
