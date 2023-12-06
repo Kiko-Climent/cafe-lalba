@@ -17,6 +17,22 @@ def new_reservation(request):
             booking.user = request.user if request.user.is_authenticated else None
             booking.save()
 
+            # Generate a booking report
+            reservation_details = {
+                'name': booking.name,
+                'num_people': booking.num_people,
+                'date': booking.date,
+                'phone': booking.phone,
+                'email': booking.email,
+                'notes': booking.notes,
+            }
+            report_html = render_to_string('reservations/reservation_report.html', {
+                'reservation_details': reservation_details
+            })
+            # Display a successs message to the user
+            messages.success(request, 'Reservation successfully made')
+            # Return an HTTP response with both message and details
+            return HttpResponse(f'{messages.get_messages(request).render()}{report_html}')
         else:
             messages.error(request, 'Something went wrong, please check your data')
     else:
