@@ -13,13 +13,13 @@
                 <a href="{% url 'home' %}">HOME</a>
             </li>
             <li>
-                <a href="{% url 'home' %}">ABOUT</a>
+                <a href="">ABOUT</a>
             </li>
             <li>
                 <a href="">MENU</a>
             </li>
             <li>
-                <a href="">BOOKINGS</a>
+                <a href="{% url 'new_reservation' %}">RESERVATIONS</a>
             </li>
             {% if user.is_authenticated %}
             <li>
@@ -33,6 +33,9 @@
                 <a href="{% url 'account_login' %}">LOG IN</a>
             </li>
             {% endif %}
+            <li>
+                <a href="">CONTACT</a>
+            </li>
         </ul>
     </nav>
 
