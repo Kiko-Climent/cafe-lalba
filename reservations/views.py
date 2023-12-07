@@ -5,7 +5,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.http import HttpResponse
 from django.template.loader import render_to_string
-# To check availability
 from datetime import timedelta
 
 @login_required
@@ -20,8 +19,8 @@ def new_reservation(request):
             # Check reservation limits for the day
             reservations_today = Booking.objects.filter(date=booking.date)
             if reservations_today.count() >= 6:  # Adjust to your maximum daily limit
-                messages.error(request, 'Daily reservations limit reached.')
-                return redirect('reservation_page')  # Change 'reservation_page' to your actual URL name
+                messages.error(request, 'Fully booked, please select a different time or day.')
+                return render(request, 'reservations/new_reservation.html', {'form': form})  
 
             # Check table availability for the requested time
             start_time = booking.date  # Adjust with actual start time from the form
@@ -31,7 +30,7 @@ def new_reservation(request):
             ).filter(date__range=(start_time, end_time))
             if colliding_reservations.exists():
                 messages.error(request, 'Table already booked for the requested time.')
-                return redirect('reservation_page')  # Change 'reservation_page' to your actual URL name
+                return redirect('new_reservation')
 
             booking.save()
 
@@ -39,6 +38,8 @@ def new_reservation(request):
             reservation_details = {
                 'name': booking.name,
                 'num_people': booking.num_people,
+                'start_time': booking.start_time,
+                'end_time': booking.end_time,
                 'date': booking.date,
                 'phone': booking.phone,
                 'email': booking.email,
@@ -57,6 +58,8 @@ def new_reservation(request):
         form = BookingForm()
 
     return render(request, 'reservations/new_reservation.html', {'form': form})
+
+
 
 @login_required
 

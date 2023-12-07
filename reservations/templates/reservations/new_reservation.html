@@ -1,12 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<h2>Create a Booking</h2>
+    <h2>Create a Booking</h2>
+    {% if error_message %}
+        <div class="alert alert-danger" role="alert">
+            {{ error_message }}
+        </div>
+    {% endif %}
+    
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-danger" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Submit</button>
     </form>
-
 {% endblock %}

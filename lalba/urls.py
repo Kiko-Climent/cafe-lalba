@@ -26,4 +26,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('reservations/new/', reservation_views.new_reservation, name='new_reservation'),
     
+    
 ]
