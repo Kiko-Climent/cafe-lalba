@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Reservation Details</h1>
+  <p><strong>Name:</strong> {{ reservation_details.name }}</p>
+  <p><strong>Number of People:</strong> {{ reservation_details.num_people }}</p>
+  <p><strong>Date:</strong> {{ reservation_details.date }}</p>
+  <p><strong>Phone:</strong> {{ reservation_details.phone }}</p>
+  <p><strong>Email:</strong> {{ reservation_details.email }}</p>
+  <p><strong>Notes:</strong> {{ reservation_details.notes }}</p>
+
+{% endblock %}

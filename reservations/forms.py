@@ -11,7 +11,7 @@ class BookingForm(forms.ModelForm):
 
     class Meta:
         model = Booking
-        fields = ['name', 'num_people', 'date', 'phone', 'email', 'notes']
+        fields = ['name', 'num_people', 'date','start_time', 'end_time', 'phone', 'email', 'notes']
         input_formats = {
             'date': ['%d/%m/%Y']
         }
