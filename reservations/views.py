@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.http import HttpResponse
 from django.template.loader import render_to_string
+from django.utils import timezone
 from datetime import timedelta
 
 @login_required
@@ -15,24 +16,24 @@ def new_reservation(request):
         if form.is_valid():
             booking = form.save(commit=False)
             booking.user = request.user if request.user.is_authenticated else None
-
-            # Check reservation limits for the day
-            reservations_today = Booking.objects.filter(date=booking.date)
-            if reservations_today.count() >= 6:  # Adjust to your maximum daily limit
-                messages.error(request, 'Fully booked, please select a different time or day.')
-                return render(request, 'reservations/new_reservation.html', {'form': form})  
-
-            # Check table availability for the requested time
-            start_time = booking.date  # Adjust with actual start time from the form
-            end_time = start_time + timedelta(hours=2)  # Assuming 2 hours per booking
-            colliding_reservations = Booking.objects.filter(date=booking.date).exclude(
-                id=booking.id if booking.id else None
-            ).filter(date__range=(start_time, end_time))
-            if colliding_reservations.exists():
-                messages.error(request, 'Table already booked for the requested time.')
-                return redirect('new_reservation')
+            
+            if booking.date and booking.start_time and booking.end_time:
+                start_time = booking.start_time
+                end_time = booking.end_time
+                # Obtener reservas para la misma fecha y hora
+                colliding_reservations = Booking.objects.filter(date=booking.date).exclude(
+                    id=booking.id if booking.id else None
+                ).filter(start_time__lte=end_time, end_time__gte=start_time)
+                
+                if colliding_reservations.count() >= 6:
+                    # Verificar si ya han pasado 2 horas desde la última reserva
+                    last_booking_time = colliding_reservations.latest('date_added').date_added
+                    if last_booking_time + timedelta(hours=2) > timezone.now():
+                        messages.error(request, 'Fully booked for this hour. Try another time.')
+                        return render(request, 'reservations/new_reservation.html', {'form': form})
 
             booking.save()
+
 
             # Generate a booking report
             reservation_details = {

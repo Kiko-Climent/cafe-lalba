@@ -23,6 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #path('', views.home, name='home'),
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('about/', TemplateView.as_view(template_name='about.html'), name='about'),
+    path('menu/', TemplateView.as_view(template_name='menu.html'), name='menu'),
     path('accounts/', include('allauth.urls')),
     path('reservations/new/', reservation_views.new_reservation, name='new_reservation'),
     
