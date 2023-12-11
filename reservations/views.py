@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Booking
 from .forms import BookingForm
+from .forms import BookingUpdateForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.http import HttpResponse
@@ -63,7 +64,36 @@ def new_reservation(request):
 
 
 @login_required
+def user_reservation(request):
+    user_bookings = Booking.objects.filter(user=request.user)
+    if user_bookings.exists():
+        active_booking = user_bookings.first()
+        if active_booking.user == request.user:
+            print("User and active booking associated correctly:", request.user, active_booking.id)
+            return render(request, 'reservations/update_reservation.html', {'form': BookingForm(instance=active_booking), 'booking': active_booking})
+    return redirect('new_reservation')
 
-def update_booking(request, booking_id):
-    booking = get_object_or_404(Booking, pk=booking_id)
 
+
+@login_required
+
+def reservation_list(request):
+    bookings = Booking.objects.filter(user=request.user)
+    return render(request, 'reservations/reservation_list.html', {'bookings': bookings})
+
+
+@login_required
+def update_reservation(request, booking_id):
+    print("Received booking ID:", booking_id)
+    booking = get_object_or_404(Booking, pk=booking_id, user=request.user)
+
+    if request.method == 'POST':
+        form = BookingUpdateForm(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Reservation updated successfully')
+            return redirect('reservation_list')
+    else:
+        form = BookingUpdateForm(instance=booking)
+
+    return render(request, 'reservations/update_reservation.html', {'form': form, 'booking': booking})

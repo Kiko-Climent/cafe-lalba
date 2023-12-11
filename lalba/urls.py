@@ -26,7 +26,8 @@ urlpatterns = [
     path('about/', TemplateView.as_view(template_name='about.html'), name='about'),
     path('menu/', TemplateView.as_view(template_name='menu.html'), name='menu'),
     path('accounts/', include('allauth.urls')),
+    path('reservations/', reservation_views.reservation_list, name='reservation_list'),
     path('reservations/new/', reservation_views.new_reservation, name='new_reservation'),
-    
-    
+    path('reservations/update/<int:booking_id>/', reservation_views.update_reservation, name='update_reservation'),
+        
 ]

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method="post" action="{% url 'update_reservation' booking_id=booking.id %}">
+    {% csrf_token %}
+    {{ form.start_time }}
+    {{ form.date }}
+    {{ form.num_people }}
+    <button type="submit">Update</button>
+</form>
+
+{% endblock %}

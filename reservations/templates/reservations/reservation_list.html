@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if bookings %}
+    <ul>
+        {% for booking in bookings %}
+            <li>
+                Table booked on {{ booking.date }} at {{ booking.start_time }} -
+                <a href="{% url 'update_reservation' booking_id=booking.id %}">UPDATE</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>You have no bookings</p>
+{% endif %}
+
+{% endblock %}
