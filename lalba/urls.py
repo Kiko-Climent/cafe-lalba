@@ -29,5 +29,6 @@ urlpatterns = [
     path('reservations/', reservation_views.reservation_list, name='reservation_list'),
     path('reservations/new/', reservation_views.new_reservation, name='new_reservation'),
     path('reservations/update/<int:booking_id>/', reservation_views.update_reservation, name='update_reservation'),
+    path('reservations/<int:booking_id>/delete/', reservation_views.delete_reservation, name='delete_reservation'),
         
 ]

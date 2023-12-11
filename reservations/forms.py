@@ -1,7 +1,9 @@
 from django import forms
+from django.forms.widgets import DateInput
 from .models import Booking
 from datetime import time, date
 
+"""Create New Booking Form"""
 class BookingForm(forms.ModelForm):
     num_people = forms.IntegerField(
         label='Number of People',
@@ -97,4 +99,8 @@ class BookingUpdateForm(forms.ModelForm):
         
         return cleaned_data
 
-
+    """make update booking not be able to reserve a table in the past"""
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['date'].widget = DateInput(attrs={'type': 'date', 'min': str(date.today())})
+       

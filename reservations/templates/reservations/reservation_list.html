@@ -9,6 +9,9 @@
                 Table booked on {{ booking.date }} at {{ booking.start_time }} -
                 <a href="{% url 'update_reservation' booking_id=booking.id %}">UPDATE</a>
             </li>
+            <li>
+                <a href="{% url 'delete_reservation' booking.id %}">DELETE</a>
+            </li>
         {% endfor %}
     </ul>
 {% else %}

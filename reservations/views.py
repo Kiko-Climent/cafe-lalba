@@ -97,3 +97,16 @@ def update_reservation(request, booking_id):
         form = BookingUpdateForm(instance=booking)
 
     return render(request, 'reservations/update_reservation.html', {'form': form, 'booking': booking})
+    
+"""Add view to cancel an existing reservation"""
+@login_required
+def delete_reservation(request, booking_id):
+    booking = get_object_or_404(Booking, pk=booking_id, user=request.user)
+
+    if request.method == 'POST':
+        booking.delete()
+        messages.success(request, 'Reservation deleted successfully')
+        return redirect('reservation_list')
+
+    return render(request, 'reservations/delete_reservation.html', {'booking': booking})
+
