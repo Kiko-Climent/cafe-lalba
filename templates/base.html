@@ -21,10 +21,10 @@
             <li>
                 <a href="{% url 'new_reservation' %}">RESERVATIONS</a>
             </li>
+            {% if user.is_authenticated %}
             <li>
                 <a href="{% url 'reservation_list' %}">MY RESERVATIONS</a>
             </li>
-            {% if user.is_authenticated %}
             <li>
                 <a href="{% url 'account_logout' %}">LOG OUT</a>
             </li>
@@ -38,7 +38,7 @@
 
             {% endif %}
             <li>
-                <a href="">CONTACT</a>
+                <a href="{% url 'contact' %}">CONTACT</a>
             </li>
         </ul>
     </nav>

@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
 from reservations import views as reservation_views
+from contact import views as contact_views
 
 
 urlpatterns = [
@@ -30,5 +31,6 @@ urlpatterns = [
     path('reservations/new/', reservation_views.new_reservation, name='new_reservation'),
     path('reservations/update/<int:booking_id>/', reservation_views.update_reservation, name='update_reservation'),
     path('reservations/<int:booking_id>/delete/', reservation_views.delete_reservation, name='delete_reservation'),
+    path('contact/', contact_views.contact_view, name='contact'),
         
 ]
