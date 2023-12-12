@@ -5,6 +5,9 @@ class ContactMessage(models.Model):
     subject = models.CharField(max_length=100)
     email = models.EmailField()
     notes = models.TextField(max_length=500)
+    responded = models.BooleanField(default=False)
+    timestamp = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    admin_response = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return self.email  # Muestra el email como representación del modelo en el admin
+        return self.email
