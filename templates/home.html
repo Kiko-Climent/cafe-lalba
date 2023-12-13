@@ -2,14 +2,108 @@
 
 {% block content %}
 
-<h1>HOME</h1>
+<article class="container mt-3">
+  <!-- Callout section -->
+  <div class="row">
+    <div class="col-12">
+      <section class="callout jumbotron text-center">
+        <h1>Traditional Alicante cuisine since 1986, specializing in rice dishes and stews.</h1>
+        <p class="lead"><strong>"Taste the authentic Mediterranean essence."</strong></p>
+        <a class="btn btn-success btn-lg" href="{% url 'new_reservation' %}" role="button">BOOK A TABLE</a>
+      </section>
+    </div>
+  </div>
+  <hr>
+
+  <!-- About section -->
+  <div>
+    <section class="about">
+      <div class="row">
+        <div class="col-12 my-5">
+          <h2>ABOUT</h2>
+          <h3>It's all about tradition</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>
+            "Cafeteria l'Alba opened its doors back in '87, continuing a family tradition that dates back to the 1960s
+            when
+            Jose García started his first business called 'El Casino' in the Alicante town of Sella. His daughters Pepa
+            and
+            Rosa continued their legacy by moving the business to Alicante and inaugurating 'Cafeteria l'Alba.' Today,
+            the
+            restaurant is led by Pepe Climent, Pepa's son, who has continued the family tradition by offering homemade
+            and
+            artisanal food where rice and stews from the interior of the Alicante province take center stage."</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <hr>
+
+  <!-- Specials section-->
+  <div>
+    <section class="specials">
+      <div class="row">
+        <div class="col-12 my-5">
+          <h2>OUR SPECIALS</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="special">
+            <h3>Paella</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate corrupti assumenda nisi, accusamus
+              quaerat
+              voluptas eos debitis, consequatur distinctio numquam nam nihil deleniti dignissimos tempore a, esse
+              recusandae
+              error tenetur?</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="special">
+            <h3>Puchero</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate corrupti assumenda nisi, accusamus
+              quaerat
+              voluptas eos debitis, consequatur distinctio numquam nam nihil deleniti dignissimos tempore a, esse
+              recusandae
+              error tenetur?</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="special">
+            <h3>Lentejas</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate corrupti assumenda nisi, accusamus
+              quaerat
+              voluptas eos debitis, consequatur distinctio numquam nam nihil deleniti dignissimos tempore a, esse
+              recusandae
+              error tenetur?</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="special">
+            <h3>Albondigas de la Abuela</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate corrupti assumenda nisi, accusamus
+              quaerat
+              voluptas eos debitis, consequatur distinctio numquam nam nihil deleniti dignissimos tempore a, esse
+              recusandae
+              error tenetur?</p>
+          </div>
+        </div>
+        <a class="btn btn-info btn-md text-center" href="{% url 'menu' %}" role="button">SEE THE WHOLE MENU</a>
+      </div>
+    </section>
+  </div>
+  <hr>
+</article>
 
 {% if messages %}
-  <ul class="messages">
-    {% for message in messages %}
-      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+<ul class="messages">
+  {% for message in messages %}
+  <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
     {% endfor %}
-  </ul>
+</ul>
 {% endif %}
 
 {% endblock %}

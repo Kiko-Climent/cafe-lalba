@@ -16,10 +16,17 @@ class ContactMessageAdmin(admin.ModelAdmin):
             'classes': ('wide', 'extrapretty'),
         }),
     )
+
     def save_model(self, request, obj, form, change):
-        if obj.responded and obj.admin_response and not change:  
-            response = obj.admin_response  
-            send_mail('Respondido: ' + obj.subject, response, 'climent.kiko@gmail.com', [obj.email], fail_silently=False)
+        print("Guardando modelo...")
+        if not change:
+            print("Responded:", obj.responded)
+            print("Admin response:", obj.admin_response)
+        
+            if obj.responded and obj.admin_response.strip():
+                response = obj.admin_response.strip()
+                send_mail('Answered: ' + obj.subject, response, 'climent.kiko@gmail.com', [obj.email], fail_silently=False)
+                print("Email send to:", obj.email)
 
         super().save_model(request, obj, form, change)
 
