@@ -5,7 +5,7 @@ body {
 
 .callout-container {
     height: 100vh;
-    background: url(/static/images/Gastronomia_Aspencat.webp) no-repeat center center fixed;
+    background: url(/static/images/guiso3.jpeg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -19,6 +19,10 @@ body {
 .about-container {}
 
 .specials-container {}
+
+.menu-container {
+    padding-top: 20px;
+}
 
 /* Style Jumbotron */
 
@@ -37,3 +41,22 @@ body {
     font-weight: bold;
     color: black;
 }
+
+/* Style Menu Section */
+.menu-item {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+
+.menu-item h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.menu-item p.item-description {
+    font-size: 16px;
+    color: #666;
+}
+
