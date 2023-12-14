@@ -7,43 +7,43 @@
   <div class="row">
     <div class="col-12">
       <section class="callout jumbotron text-center">
-        <h1 class="jumbotron-header">Traditional Alicante cuisine since 1986,<br>specializing in rice dishes and stews.</h1>
+        <h1 class="jumbotron-header">Traditional Alicante cuisine since 1986,<br>specializing in rice dishes and stews.
+        </h1>
         <p class="lead"><strong>"Taste the authentic Mediterranean essence."</strong></p>
         <a class="btn btn-success btn-lg" href="{% url 'new_reservation' %}" role="button">BOOK A TABLE</a>
       </section>
     </div>
   </div>
 </div>
+<hr>
 
 <!-- About section -->
-<div class="container about-container">
+<div id="about" class="container about-container">
   <section class="about">
-    <div class="row">
-      <div class="col-12 my-5 text-center">
-        <h2>ABOUT</h2>
-        <p><strong>It's all about tradition</strong></p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12 text-center">
-        <p>
+    <div class="row align-items-center">
+      <div class="col-lg-6 order-lg-1">
+        <h2 class="text-center text-lg-left">ABOUT</h2>
+        <p class="text-center text-lg-left"><strong>It's all about tradition</strong></p>
+        <p class="text-center text-lg-left">
           "Cafeteria l'Alba opened its doors back in '86, continuing a family tradition that dates back to the 1960s
-          when
-          Jose García started his first business called 'El Casino' in the Alicante town of Sella. His daughters Pepa
-          and
-          Rosa continued their legacy by moving the business to Alicante and inaugurating 'Cafeteria l'Alba.' Today,
-          the
-          restaurant is led by Pepe Climent, Pepa's son, who has continued the family tradition by offering homemade
-          and
-          artisanal food where rice and stews from the interior of the Alicante province take center stage."</p>
+          when Jose García started his first business called 'El Casino' in the Alicante town of Sella. His daughters
+          Pepa and Rosa continued their legacy by moving the business to Alicante and inaugurating 'Cafeteria l'Alba.'
+          Today, the restaurant is led by Pepe Climent, Pepa's son, who has continued the family tradition by offering
+          homemade and artisanal food where rice and stews from the interior of the Alicante province take center
+          stage."
+        </p>
+      </div>
+      <div class="col-lg-6 order-lg-2">
+        <img src="/static/images/sella.jpeg" class="img-fluid" alt="Sella">
       </div>
     </div>
   </section>
 </div>
 <hr>
 
+
 <!-- Specials section-->
-<div class="container specials-container">
+<div id="specials" class="container specials-container">
   <section class="specials">
     <div class="row">
       <div class="col-12 my-5 text-center">
@@ -60,21 +60,21 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="/static/images/paella.jpg" class="d-block w-100" alt="paella">
+            <img src="/static/images/paella.jpg" class="img-fluid d-block" alt="paella">
             <div class="carousel-caption d-md-block">
               <h5>PAELLA</h5>
               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="/static/images/puchero.jpg" class="d-block w-100" alt="puchero">
+            <img src="/static/images/puchero.jpg" class="img-fluid d-block" alt="puchero">
             <div class="carousel-caption d-md-block">
               <h5>PUCHERO</h5>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="/static/images/lentejas.jpg" class="d-block w-100" alt="lentejas">
+            <img src="/static/images/lentejas.jpg" class="img-fluid d-block" alt="lentejas">
             <div class="carousel-caption d-md-block">
               <h5>LENTEJAS</h5>
               <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
