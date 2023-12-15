@@ -6,16 +6,22 @@
             <div class="col-md-6">
                 <h2 class="mb-4">Create a Booking</h2>
                 {% if error_message %}
-                    <div class="alert alert-danger" role="alert">
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
                         {{ error_message }}
-                    </div>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
                 {% endif %}
                 
                 {% if messages %}
                     {% for message in messages %}
-                        <div class="alert alert-danger" role="alert">
-                            {{ message }}
-                        </div>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
                     {% endfor %}
                 {% endif %}
                 
@@ -24,7 +30,46 @@
                     {{ form.as_p }}
                     <button type="submit" class="btn btn-primary mt-3">Submit</button>
                 </form>
+
+                <!-- Add Modal showing the rules for bookings -->
+                <div class="modal fade" id="bookingRulesModal" tabindex="-1" role="dialog" aria-labelledby="bookingRulesModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="bookingRulesModalLabel">Cafeteria l'Alba</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <strong>The booking rules are as follows:</strong><br>
+                                - The maximum capacity per table is 4 people.<br>
+                                - For groups larger than 4, please contact the establishment.<br>
+                                - Meal sessions available at 18:00 / 19:00 / 20:00 / 21:00.<br>
+                                - Feel free to arrive a bit earlier and enjoy a drink at the bar while we get ready your table.<hr>
+                                Thanks.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin del modal -->
+
+                <!-- Botón para abrir el modal -->
+                <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#bookingRulesModal">
+                    View Booking Rules
+                </button>
+
             </div>
         </div>
     </div>
+
+    <script>
+        // Cerrar las alertas después de 3 segundos
+        setTimeout(() => {
+            $(".alert").alert('close');
+        }, 3000);
+    </script>
 {% endblock %}

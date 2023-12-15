@@ -13,4 +13,9 @@
   <p><strong>Email:</strong> {{ reservation_details.email }}</p>
   <p><strong>Notes:</strong> {{ reservation_details.notes }}</p>
 
+  {% if reservation_details.user %}
+    <h2>User Details</h2>
+    <p><strong>Username:</strong> {{ reservation_details.user.username }}</p>
+  {% endif %}
+
 {% endblock %}

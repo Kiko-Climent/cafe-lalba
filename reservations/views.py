@@ -21,13 +21,13 @@ def new_reservation(request):
             if booking.date and booking.start_time and booking.end_time:
                 start_time = booking.start_time
                 end_time = booking.end_time
-                # Obtener reservas para la misma fecha y hora
+                # Get bookings for same date and time
                 colliding_reservations = Booking.objects.filter(date=booking.date).exclude(
                     id=booking.id if booking.id else None
                 ).filter(start_time__lte=end_time, end_time__gte=start_time)
                 
                 if colliding_reservations.count() >= 6:
-                    # Verificar si ya han pasado 2 horas desde la última reserva
+                    
                     last_booking_time = colliding_reservations.latest('date_added').date_added
                     if last_booking_time + timedelta(hours=2) > timezone.now():
                         messages.error(request, 'Fully booked for this hour. Try another time.')
@@ -46,6 +46,7 @@ def new_reservation(request):
                 'phone': booking.phone,
                 'email': booking.email,
                 'notes': booking.notes,
+                'user': request.user,
             }
             report_html = render_to_string('reservations/reservation_report.html', {
                 'reservation_details': reservation_details
@@ -53,7 +54,7 @@ def new_reservation(request):
             # Display a success message to the user
             messages.success(request, 'Reservation successfully made')
             # Return an HTTP response with the report
-            return HttpResponse(report_html)
+            return redirect('reservation_report', booking_id=booking.id)
         else:
             messages.error(request, 'Something went wrong, please check your data')
     else:
@@ -74,9 +75,30 @@ def user_reservation(request):
     return redirect('new_reservation')
 
 
+@login_required
+def reservation_report(request, booking_id):
+    booking = Booking.objects.filter(pk=booking_id, user=request.user).first()
+    if booking:
+        reservation_details = {
+            'name': booking.name,
+            'num_people': booking.num_people,
+            'start_time': booking.start_time,
+            'end_time': booking.end_time,
+            'date': booking.date,
+            'phone': booking.phone,
+            'email': booking.email,
+            'notes': booking.notes,
+            'user': booking.user,
+        }
+        return render(request, 'reservations/reservation_report.html', {
+            'reservation_details': reservation_details,
+            'user': request.user 
+        })
+    else:
+        return render(request, 'error.html', {'message': 'Booking not found or not associated with the user'})
+
 
 @login_required
-
 def reservation_list(request):
     bookings = Booking.objects.filter(user=request.user)
     return render(request, 'reservations/reservation_list.html', {'bookings': bookings})
