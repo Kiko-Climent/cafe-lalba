@@ -1,13 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<h1>Delete Reservation</h1>
-<p>Are you sure you want to delete the reservation for {{ booking.name }}?</p>
-<form method="post">
-    {% csrf_token %}
-    <button type="submit">Confirm Delete</button>
-    <a href="{% url 'reservation_list' %}">Cancel</a>
-</form>
-
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 mt-5">
+                <h1 class="mb-4">Delete Reservation</h1>
+                <p>Are you sure you want to delete the reservation for <strong>{{ booking.name }}</strong> on <strong>{{ booking.date }}</strong> at
+                    <strong>{{ booking.start_time }}</strong>?</p>
+                <form method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger mr-2">Confirm Delete</button>
+                    <a href="{% url 'reservation_list' %}" class="btn btn-secondary">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
 {% endblock %}

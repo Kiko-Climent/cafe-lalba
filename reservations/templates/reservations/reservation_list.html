@@ -3,7 +3,10 @@
 {% block content %}
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-md-6">
+            <div class="col-md-6 mt-4 text-center"> <!-- Agregar 'text-center' para centrar el contenido -->
+                {% if user.is_authenticated %}
+                    <h3>RESERVATIONS LIST OF: {{ user.username }}</h3>
+                {% endif %}
                 {% if bookings %}
                     <ul class="list-group">
                         {% for booking in bookings %}

@@ -1,21 +1,32 @@
 {% extends 'base.html' %}
 
-{% block content %}
-
-<h1>TABLE SUCCESFULLY BOOKED!</h1>
-<h2>Reservation Details</h2>
-  <p><strong>Name:</strong> {{ reservation_details.name }}</p>
-  <p><strong>Number of People:</strong> {{ reservation_details.num_people }}</p>
-  <p><strong>Date:</strong> {{ reservation_details.date }}</p>
-  <p><strong>Start Time:</strong> {{ reservation_details.start_time }}</p>
-  <p><strong>End Time:</strong> {{ reservation_details.end_time }}</p>
-  <p><strong>Phone:</strong> {{ reservation_details.phone }}</p>
-  <p><strong>Email:</strong> {{ reservation_details.email }}</p>
-  <p><strong>Notes:</strong> {{ reservation_details.notes }}</p>
-
-  {% if reservation_details.user %}
-    <h2>User Details</h2>
-    <p><strong>Username:</strong> {{ reservation_details.user.username }}</p>
-  {% endif %}
-
+{% block content %}                          
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title">TABLE SUCCESSFULLY BOOKED!</h1>
+                        <h2>Reservation Details</h2>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>Name:</strong> {{ reservation_details.name }}</li>
+                            <li class="list-group-item"><strong>Number of People:</strong> {{ reservation_details.num_people }}</li>
+                            <li class="list-group-item"><strong>Date:</strong> {{ reservation_details.date }}</li>
+                            <li class="list-group-item"><strong>Start Time:</strong> {{ reservation_details.start_time }}</li>
+                            <li class="list-group-item"><strong>End Time:</strong> {{ reservation_details.end_time }}</li>
+                            <li class="list-group-item"><strong>Phone:</strong> {{ reservation_details.phone }}</li>
+                            <li class="list-group-item"><strong>Email:</strong> {{ reservation_details.email }}</li>
+                            <li class="list-group-item"><strong>Notes:</strong> {{ reservation_details.notes }}</li>
+                        </ul>
+                        {% if reservation_details.user %}
+                            <h2>User Details</h2>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><strong>Username:</strong> {{ reservation_details.user.username }}</li>
+                            </ul>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

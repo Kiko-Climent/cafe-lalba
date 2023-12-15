@@ -23,6 +23,10 @@ footer {
     bottom: 0;
 }
 
+.callout {
+    background: #ffefd582;
+}
+
 .callout-container {
     height: 100vh;
     background: url(/static/images/guiso3.jpeg) no-repeat center center fixed;
@@ -47,7 +51,7 @@ footer {
 /* Style Jumbotron */
 
 .jumbotron {
-    background-color: transparent;
+    background-color: #ffffff6b;
 }
 
 .jumbotron-header {
