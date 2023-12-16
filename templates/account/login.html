@@ -1,37 +1,44 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load allauth account socialaccount %}
+
 {% block head_title %}
-    {% trans "Sign In" %}
+{% trans "Sign In" %}
 {% endblock head_title %}
+
 {% block content %}
-    {% element h1 %}
-        {% trans "Sign In" %}
-    {% endelement %}
-    <p>
-        Please LOG IN to Create, Update or Delete your Reservation.
-    </p>
-    <p>
-        {% blocktrans %}If you have not created an account yet, then please
-    <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
-    </p>
-    {% url 'account_login' as login_url %}
-    {% element form form=form method="post" action=login_url tags="entrance,login" %}
-        {% slot body %}
-            {% csrf_token %}
-            {% element fields form=form unlabeled=True %}
-            {% endelement %}
-            {% if redirect_field_value %}
-                <input type="hidden"
-                       name="{{ redirect_field_name }}"
-                       value="{{ redirect_field_value }}" />
-            {% endif %}
-        {% endslot %}
-        {% slot actions %}
-            {% element button type="submit" tags="prominent,login" %}
-                {% trans "Sign In" %}
-            {% endelement %}
-        {% endslot %}
-    {% endelement %}
-    {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 mt-4 mb-4 text-center">
+            <div class="card p-5">
+                <h1><i class="fas fa-sign-in-alt"></i> 
+                    {% trans "Sign In" %}</h1>
+                <p>
+                    Please LOG IN to Create, Update or Delete your Reservation.
+                </p>
+                <p>
+                    {% blocktrans %}You don't have an account yet?, then please
+                    <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
+                </p>
+                {% url 'account_login' as login_url %}
+                <form method="post" action="{{ login_url }}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="id_login">{{ _('Username or Email') }}</label>
+                        <input type="text" class="form-control" id="id_login" name="login" required autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_password">{{ _('Password') }}</label>
+                        <input type="password" class="form-control" id="id_password" name="password" required>
+                    </div>
+                    {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
+                    <button type="submit" class="btn btn-primary">{% trans "Sign In" %}</button>
+                </form>
+                {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}

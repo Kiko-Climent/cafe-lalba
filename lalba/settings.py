@@ -34,6 +34,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['8000-kikocliment-cafelalba-8hp62awscww.ws-eu107.gitpod.io', 'cafe-lalba-08ae328c9609.herokuapp.com']
 
+GOOGLE_MAPS_API_KEY = os.environ.get('GOOGLE_MAPS_API_KEY')
 
 # Application definition
 
@@ -59,7 +60,7 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-ACCOUNT_SIGNUP_REDIRECT_URL = '/'  # Esta línea redirigirá a la página de inicio
+ACCOUNT_SIGNUP_REDIRECT_URL = '/'
 
 
 MIDDLEWARE = [
@@ -166,3 +167,5 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+

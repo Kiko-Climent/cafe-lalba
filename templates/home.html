@@ -2,10 +2,10 @@
 
 {% block content %}
 
-<!-- Alerts the user about succesfully sign up-->
+<!-- Alerts the user about succesfull sign -->
 {% if messages %}
 {% for message in messages %}
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
+<div class="alert alert-success alert-dismissible fade show" role="alert">
   {{ message }}
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
@@ -34,7 +34,7 @@
   <section class="about">
     <div class="row align-items-center">
       <div class="col-lg-6 order-lg-1">
-        <h2 class="text-center text-lg-left">ABOUT</h2>
+        <h2 class="text-center text-lg-left"><i class="fas fa-users"></i> ABOUT</h2>
         <p class="text-center text-lg-left"><strong>It's all about tradition</strong></p>
         <p class="text-center text-lg-left">
           "Cafeteria l'Alba opened its doors back in '86, continuing a family tradition that dates back to the 1960s
@@ -59,7 +59,8 @@
   <section class="specials">
     <div class="row">
       <div class="col-12 my-5 text-center">
-        <h2>OUR SPECIALS</h2>
+        <h2><i class="fas fa-utensils"></i> OUR SPECIALS
+          <i class="fas fa-utensils"></i></h2>
       </div>
     </div>
 

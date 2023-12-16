@@ -1,31 +1,69 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6 mt-4">
-                <h2 class="text-center mb-4">How can we help you?</h2>
-                <form method="post" class="mt-4">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        <label for="id_name">Name:</label>
-                        {{ form.name }}
-                    </div>
-                    <div class="form-group">
-                        <label for="id_subject">Subject:</label>
-                        {{ form.subject }}
-                    </div>
-                    <div class="form-group">
-                        <label for="id_email">Email:</label>
-                        {{ form.email }}
-                    </div>
-                    <div class="form-group">
-                        <label for="id_notes">Notes:</label>
-                        {{ form.notes }}
-                    </div>
-                    <button type="submit" class="btn btn-primary mb-4">SEND</button>
-                </form>
-            </div>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 mt-4">
+            <h2 class="text-center mb-4"><i class="fas fa-comments"></i> How can we help you?</h2>
+            <form method="post" class="mt-4">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_name">Name:</label>
+                    {{ form.name }}
+                </div>
+                <div class="form-group">
+                    <label for="id_subject">Subject:</label>
+                    {{ form.subject }}
+                </div>
+                <div class="form-group">
+                    <label for="id_email">Email:</label>
+                    {{ form.email }}
+                </div>
+                <div class="form-group">
+                    <label for="id_notes">Notes:</label>
+                    {{ form.notes }}
+                </div>
+                <button type="submit" class="btn btn-primary mb-4">SEND</button>
+            </form>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-6 mt-4 text-center">
+            <h2 class="mb-4">CONTACT DETAILS:</h2>
+            <div class="mb-3">
+                <h4>Address:</h4>
+                <p>C/ Doctor Sapena, 25
+                    <br>03013, Alicante (Spain)
+                </p>
+            </div>
+            <div class="mb-3">
+                <h4>Phone:</h4>
+                <p>+34 965140522</p>
+            </div>
+        </div>
+        <div id="map" class="col-md-6 mt-4 text-center">
+            <h4>Location:</h4>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Function to initialize Maps
+    function initMap() {
+        var myLatLng = { lat: 38.3540733147165, lng: -0.47668826985353024 };
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: myLatLng
+        });
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: "Cafeteria l'Alba"
+        });
+    }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key={{ GOOGLE_MAPS_API_KEY }}&callback=initMap" async defer>
+</script>
+
 {% endblock %}

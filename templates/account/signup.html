@@ -1,15 +1,17 @@
 {% extends "base.html" %}
 {% load allauth i18n socialaccount %}
 {% block head_title %}
-    {% trans "Signup" %}
+{% trans "Signup" %}
 {% endblock head_title %}
 {% block content %}
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6 mt-4 mb-4">
-                <h1>{% trans "Sign Up" %}</h1>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 mt-4 mb-4">
+            <div class="card p-5 text-center">
+                <h1><i class="fas fa-address-card"></i> {% trans "Sign Up" %}</h1>
                 <p>
-                    {% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">log in</a>.{% endblocktrans %}
+                    {% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">log
+                        in</a>.{% endblocktrans %}
                 </p>
                 <form method="post" action="{% url 'account_signup' %}">
                     {% csrf_token %}
@@ -37,14 +39,14 @@
                         <label for="id_last_name">{% trans "Last Name" %}</label>
                         <input type="text" class="form-control" id="id_last_name" name="last_name" required>
                     </div>
-                   
+
                     {% if redirect_field_value %}
-                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                     {% endif %}
                     <button type="submit" class="btn btn-primary">{% trans "Sign Up" %}</button>
                 </form>
-                
             </div>
         </div>
     </div>
+</div>
 {% endblock content %}
