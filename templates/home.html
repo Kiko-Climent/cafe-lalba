@@ -2,6 +2,18 @@
 
 {% block content %}
 
+<!-- Alerts the user about succesfully sign up-->
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  {{ message }}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endfor %}
+{% endif %}
+
 <div class="container-fluid callout-container">
   <!-- Callout section -->
   <div class="row">
@@ -110,5 +122,11 @@
   </section>
 </div>
 <hr>
+<script>
+  // Close alerts after 3 seconds
+  setTimeout(() => {
+      $(".alert").alert('close');
+  }, 3000);
+</script>
 
 {% endblock %}
