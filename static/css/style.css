@@ -130,11 +130,19 @@ footer {
 
 /* Style success message */
 .success-container {
-    background-image: url('/static/images/salmorreta.jpeg');
+    background-image: url('/static/images/guiso4.jpeg');
     background-size: cover;
-    min-height: 500px; /* Ajusta el alto según sea necesario */
-    padding: 20px;
+    height: 100vh;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.alert-success {
+    background-color: #d4eddabf;
+    color: green;
 }
 
 

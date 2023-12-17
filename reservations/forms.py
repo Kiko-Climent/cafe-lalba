@@ -92,6 +92,10 @@ class BookingUpdateForm(forms.ModelForm):
 
         if date < date.today():
             raise forms.ValidationError("Cannot select a date in the past.")
+
+        if date == date.today():
+            raise forms.ValidationError(
+                "Reservations for today cannot be updated, please get in touch with the restaurant")            
             
         if start_time and date:
             conflicting_bookings = Booking.objects.filter(

@@ -62,6 +62,10 @@ LOGOUT_REDIRECT_URL = '/'
 
 ACCOUNT_SIGNUP_REDIRECT_URL = '/'
 
+ACCOUNT_FORMS = {
+'signup': 'contact.forms.CustomSignupForm',
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

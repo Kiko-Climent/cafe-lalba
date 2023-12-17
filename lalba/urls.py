@@ -33,5 +33,5 @@ urlpatterns = [
     path('reservations/update/<int:booking_id>/', reservation_views.update_reservation, name='update_reservation'),
     path('reservations/<int:booking_id>/delete/', reservation_views.delete_reservation, name='delete_reservation'),
     path('contact/', contact_views.contact_view, name='contact'),
-        
+
 ]

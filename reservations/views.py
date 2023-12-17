@@ -132,3 +132,4 @@ def delete_reservation(request, booking_id):
 
     return render(request, 'reservations/delete_reservation.html', {'booking': booking})
 
+
