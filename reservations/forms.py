@@ -40,6 +40,9 @@ class BookingForm(forms.ModelForm):
 
         if date < date.today():
             raise forms.ValidationError("Cannot select a date in the past.")
+        
+        if date == date.today():
+            raise forms.ValidationError("Reservations for today are not allowed.")
             
         if start_time and date:
             conflicting_bookings = Booking.objects.filter(
@@ -50,6 +53,7 @@ class BookingForm(forms.ModelForm):
                 raise forms.ValidationError("Exceeded maximum bookings for this hour.")
         
         return cleaned_data
+    
 
 """ Form to update an existing booking"""
 class BookingUpdateForm(forms.ModelForm):
