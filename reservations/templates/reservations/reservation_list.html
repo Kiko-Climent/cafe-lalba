@@ -2,29 +2,30 @@
 
 {% block content %}
 <div class="container reservation-list-container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6 mt-4 text-center">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-8 mt-4 text-center">
             {% for message in messages %}
-                <div class="alert alert-{{ message.tags }}">
-                    {{ message }}
-                </div>
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
             {% endfor %}
 
             {% if user.is_authenticated %}
-                <h3>RESERVATIONS LIST OF: {{ user.username }}</h3>
+            <h3 class="reservation-list-header">RESERVATIONS LIST OF: {{ user.username }}</h3>
             {% endif %}
             {% if bookings %}
-                <ul class="list-group">
-                    {% for booking in bookings %}
-                        <li class="list-group-item">
-                            Table booked on {{ booking.date }} at {{ booking.start_time }} -
-                            <a href="{% url 'update_reservation' booking_id=booking.id %}" class="btn btn-secondary btn-sm">UPDATE</a>
-                            <a href="{% url 'delete_reservation' booking.id %}" class="btn btn-danger btn-sm ml-2">DELETE</a>
-                        </li>
-                    {% endfor %}
-                </ul>
+            <ul class="list-group reservation-list">
+                {% for booking in bookings %}
+                <li class="list-group-item">
+                    Table booked on {{ booking.date }} at {{ booking.start_time }} -
+                    <a href="{% url 'update_reservation' booking_id=booking.id %}"
+                        class="btn btn-primary btn-sm">UPDATE</a>
+                    <a href="{% url 'delete_reservation' booking.id %}" class="btn btn-danger btn-sm ml-2">DELETE</a>
+                </li>
+                {% endfor %}
+            </ul>
             {% else %}
-                <p>You have no bookings</p>
+            <p>You have no bookings</p>
             {% endif %}
         </div>
     </div>

@@ -18,6 +18,11 @@ from django.urls import path, include
 from django.views.generic import TemplateView
 from reservations import views as reservation_views
 from contact import views as contact_views
+from django.conf.urls import handler404
+from . import views
+from .views import error_404_view
+
+handler404 = error_404_view
 
 
 urlpatterns = [
