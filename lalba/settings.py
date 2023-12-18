@@ -66,6 +66,8 @@ ACCOUNT_FORMS = {
 'signup': 'contact.forms.CustomSignupForm',
 }
 
+ACCOUNT_ADAPTER = 'contact.adapter.CustomAccountAdapter'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -140,6 +142,12 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+AUTHENTICATION_BACKENDS = [
+    'allauth.account.auth_backends.AuthenticationBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
 
 
 # Internationalization
