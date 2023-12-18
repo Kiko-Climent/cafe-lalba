@@ -14,7 +14,7 @@
                 <h1><i class="fas fa-sign-in-alt"></i> 
                     {% trans "Sign In" %}</h1>
                 <p>
-                    Please LOG IN to Create, Update or Delete your Reservation.
+                    Please LOG IN to Create, Update, or Delete your Reservation.
                 </p>
                 <p>
                     {% blocktrans %}You don't have an account yet?, then please
@@ -29,8 +29,12 @@
                             {{ field }}
                         </div>
                     {% endfor %}
-                    {% if redirect_field_value %}
-                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% if form.errors %}
+                        <div class="alert alert-danger">
+                            {% for error in form.non_field_errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
                     {% endif %}
                     <button type="submit" class="btn btn-primary">{% trans "Sign In" %}</button>
                 </form>

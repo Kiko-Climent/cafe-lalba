@@ -19,7 +19,7 @@ class CustomSignupForm(AllauthSignupForm):
  
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['email'].required = True  # Hace el campo de email obligatorio
+        self.fields['email'].required = True
 
     def save(self, request):
         user = super().save(request)
@@ -35,7 +35,6 @@ class CustomLoginForm(AuthenticationForm):
         user = None
 
         if username and password:
-            # Intentar autenticar solo con el nombre de usuario
             user = authenticate(username=username, password=password)
 
             if user is None:
