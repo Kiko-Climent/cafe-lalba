@@ -113,7 +113,7 @@ def update_reservation(request, booking_id):
         form = BookingUpdateForm(request.POST, instance=booking)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Reservation updated successfully')
+            messages.success(request, 'Your reservation has been updated')
             return redirect('reservation_list')
     else:
         form = BookingUpdateForm(instance=booking)
