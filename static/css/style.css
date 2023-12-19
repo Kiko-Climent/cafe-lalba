@@ -217,3 +217,30 @@ footer {
     background-attachment: fixed;
     
 }*/
+
+/* Style 404 Error page */
+.error-body {
+    background-image: url("https://res.cloudinary.com/dzlveh6fi/image/upload/v1703004319/static/images/tomates.4924a661dccf.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+.error-container {
+    text-align: center;
+}
+.error-heading {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: #dc3545;
+}
+.error-message {
+    font-size: 1.5rem;
+    color: #6c757d;
+}
+
