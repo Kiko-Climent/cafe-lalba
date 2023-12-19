@@ -43,4 +43,23 @@ ___
 
 The target audience is composed of users who are lovers of traditional food or those who wish to discover the incredible delicacies offered by Alicante's gastronomy.
 
+___
+
+# Tests
+
+## Manual Testing:
+
+- **Sign In**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+Username Field | Field should accept only valid characters | Entered a username with letters, numbers, and @/./+/-/_ | Pass | Pass |
+Username Field | Field should accept only valid characters | Entered a username with '#' character | Fail | Pass |
+Username Field | Field should not allow spaces in the username | Entered a username without spaces | Pass | Pass |
+Username Field | Field should not allow spaces in the username | Entered a username with spaces | Fail | Pass |
+Email Field | Should only accept a valid email format | Entered a valid email with '@' | Pass | Pass |
+Email Field | Should only accept a valid email format | Entered a invalid email without '@' | Fail | Pass |
+Email Field | Should only accept a valid email format | Entered blank field | Fail | Pass |
+
+
 
