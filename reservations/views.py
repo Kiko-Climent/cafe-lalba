@@ -9,15 +9,17 @@ from django.template.loader import render_to_string
 from django.utils import timezone
 from datetime import timedelta
 
-@login_required
 
+@login_required
 def new_reservation(request):
+    # View to create a new reservation
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
             booking = form.save(commit=False)
             booking.user = request.user if request.user.is_authenticated else None
-            
+
+            # Check if date, start_time, and end_time are provided
             if booking.date and booking.start_time and booking.end_time:
                 start_time = booking.start_time
                 end_time = booking.end_time
@@ -25,9 +27,9 @@ def new_reservation(request):
                 colliding_reservations = Booking.objects.filter(date=booking.date).exclude(
                     id=booking.id if booking.id else None
                 ).filter(start_time__lte=end_time, end_time__gte=start_time)
-                
+
+                # Check if there are more than 6 colliding reservations
                 if colliding_reservations.count() >= 6:
-                    
                     last_booking_time = colliding_reservations.latest('date_added').date_added
                     if last_booking_time + timedelta(hours=2) > timezone.now():
                         messages.error(request, 'Fully booked for this hour. Try another time.')
@@ -66,6 +68,7 @@ def new_reservation(request):
 
 @login_required
 def user_reservation(request):
+    # View to get a specific user's reservation
     user_bookings = Booking.objects.filter(user=request.user)
     if user_bookings.exists():
         active_booking = user_bookings.first()
@@ -77,6 +80,7 @@ def user_reservation(request):
 
 @login_required
 def reservation_report(request, booking_id):
+    # View to generate a reservation report for the user
     booking = Booking.objects.filter(pk=booking_id, user=request.user).first()
     if booking:
         reservation_details = {
@@ -100,12 +104,14 @@ def reservation_report(request, booking_id):
 
 @login_required
 def reservation_list(request):
+    # View to display a list of reservations for the user
     bookings = Booking.objects.filter(user=request.user)
     return render(request, 'reservations/reservation_list.html', {'bookings': bookings})
 
 
 @login_required
 def update_reservation(request, booking_id):
+    # View to update and existing reservation
     print("Received booking ID:", booking_id)
     booking = get_object_or_404(Booking, pk=booking_id, user=request.user)
 
@@ -123,6 +129,7 @@ def update_reservation(request, booking_id):
 """Add view to cancel an existing reservation"""
 @login_required
 def delete_reservation(request, booking_id):
+    # View to delele an existing reservation
     booking = get_object_or_404(Booking, pk=booking_id, user=request.user)
 
     if request.method == 'POST':
