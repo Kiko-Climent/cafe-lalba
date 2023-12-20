@@ -14,7 +14,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
+
 </head>
 
 <body>
@@ -35,9 +35,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'about' %}" data-section="about">ABOUT</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home' %}#specials" data-section="specials">OUR SPECIALS</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'menu' %}">MENU</a>
@@ -103,10 +100,10 @@
     <!-- Add script to have active links -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             var currentUrl = window.location.pathname;
-    
-            
+
+
             $('.navbar-nav a[href="' + currentUrl + '"]').addClass('active');
         });
     </script>
