@@ -21,13 +21,13 @@ The main goal behind creating this webpage is to put into practice all the frame
 
 Through this, I aim to showcase my skills while assisting my brother with his business, particularly concerning table organization.
 
-Regarding web development, the most important thing has been:
+Regarding **web development**, the most important thing has been:
 
 - ### Create a readable and clean frontend page
 
 The site is 100% responsive with all kind of devices, having a friendly and intuitive navigation.
 
-- ### Make us of backend functionality
+- ### Make use of backend functionality
 
 The use of the backend framework allows users to get in touch with the administrator, create a user account and book a table if they wish, being this last functionality able to read, update and delete.
 
@@ -43,7 +43,77 @@ ___
 
 The target audience is composed of users who are lovers of traditional food or those who wish to discover the incredible delicacies offered by Alicante's gastronomy.
 
+## User Stories
+
+## New Visitor Goals
+
+- **Explore the menu**: New visitors might want to browse through the wide range of lesser-known dishes offered by the restaurant.
+- **Register an Account**: Visitors interested in making reservations may want to create an account to access the online reservation system.
+- **Contact the Administrator**: Those with specific inquiries or needing more information might wish to reach out to the restaurant via the contact form.
+- **Discover underrated dishes**: Informing customers and helping them explore traditional dishes from the inland region of Alicante province.
+- **Discovering tradition**: Creating engagement through a family business that has been passed down from generation to generation, tradition as a fundamental pillar of the company
+
+## Existing Visitor Goals
+
+- **Make a Reservation**: Returning visitors who've registered an account might aim to use the reservation system to book a table.
+- **Explore New Dishes**: Return to explore specials or try out new items added to the menu.
+- **Contact the Administrator**: In case of issues or additional questions, existing visitors may choose to contact the restaurant again through the contact form.
+- **Update Existing Booking**: Visitors with an existing account might want to update a future booking, either by updating number of people, time or date; or by removing the booking"
 ___
+
+# Design
+
+## Colour Scheme
+
+## Typgography
+
+## Wireframes
+
+## Flow Diagram
+
+## Database Plan
+
+___
+
+# Features
+
+## Registration:
+The user can create an account:
+[]
+
+## Book a table:
+Once the account has been created, the user is alowed to place a booking.
+[]
+
+## Update Booking:
+If the user whishes, the booking could be update it.
+[]
+
+## Delete Booking:
+Of ocurse the possibity of removing the booking is also allowed.
+[]
+
+## My Bookings:
+A detailed list of past and future bookings from the user is also possible to visit under "My Reservations"
+[]
+
+## Log in / Log out:
+The user is allowed to log into his account in order to make use of the functionalities of the restaurant, *Create a New Booking, Update it or Delete it*
+[]
+
+## Contact Form:
+Both _New_ and _Existing_ users can contact the administrator for inquiries without the need for user validation to access this feature.
+[]
+
+## Admin Panel:
+The page administrator can access the _Admin Panel_ by entering their credentials. Within this panel, he will find a comprehensive dashboard displaying _Information_ from Users, _Bookings_, and _Messages_.
+[]
+
+## Future Features:
+- Add a _*users profile page*_ where stored data can be edited.
+- Add a _*reviews section*_, where new and existing users can leave feedack and rate dishes, service, etc..
+- Add the functionality of _*online orders*_, where users can _place_ and _pick up_ their food orders.
+
 
 # Tests
 
@@ -85,6 +155,13 @@ Password Field | Field should accept only valid passwords | Entered invalid pass
 Password Field | Field should accept only valid passwords | Entered valid password | Pass | Pass |
 Sign-in submision | Upon successful entry, user should be loged in | Completed the form and clicked 'Sign In' button | Pass | Pass |
 
+- **Log out**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Log out submission | Finish session | Open log out in navbar menu and click "Log-out" | Pass | Pass |
+
+
 - **Contact**
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
@@ -125,6 +202,13 @@ Notes (NOT REQUIRED) | Should allow entering additional information | Enter text
 Notes (NOT REQUIRED) | Should allow entering additional information | Enter blank fiel | Fail | Pass |
 Booking submision | Upon successful entry, user should book a table | Completed the form and clicked 'Submit' button | Pass | Pass |
 
+- **Reservations / Reservations List**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+Update booking | Should allow user to open "Update Booking Page" | Open "Reservation List page" after click in "My Reservations" and click "Update Booking" | Pass | Pass |
+Delete booking | Should allow user to open "Delete Booking Page" | Open "Reservation List page" after click in "My Reservations" and click "Delete Booking" | Pass | Pass |
+
 - **Reservations / Update Booking**
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
@@ -137,7 +221,17 @@ Date | Should only allow future dates | Select present day | Fail | Pass |
 Date | Should only allow future dates | Cannot select a past date | Pass | Pass |
 Number of People | Should allow a maximum of 4 people | Enter 1, 2, 3 and 4 | Pass | Pass |
 Number of People | Should allow a maximum of 4 people | Not possible to enter more than 4 and less than 1 | Pass | Pass |
-Booking update | Upon successful entry, user should update the previous booking | Completed the form and clicked 'Submit' button | Pass | Pass |
+Booking update submission | Upon successful entry, user should update the previous booking | Completed the form and clicked 'Submit' button | Pass | Pass |
+
+- **Reservations / Delete Booking**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Booking delete submission | Confirm Delete | Open delete booking page in My Reservations and click on "Confirm Delete" | Pass | Pass |
+
+
+
+
 
 
 
