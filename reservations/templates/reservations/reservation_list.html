@@ -14,7 +14,7 @@
             <h3 class="reservation-list-header">RESERVATIONS LIST OF: {{ user.username }}</h3>
             {% endif %}
             {% if bookings %}
-            <ul class="list-group reservation-list">
+            <ul class="list-group">
                 {% for booking in bookings %}
                 <li class="list-group-item">
                     {{ booking.date }} at {{ booking.start_time }}, {{booking.num_people}} people

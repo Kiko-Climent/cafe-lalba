@@ -64,8 +64,13 @@ ___
 # Design
 
 ## Colour Scheme
+The Colour Scheme implemented on this project was implemented after having a brainstorming with the owner of the restaurant, my brother _Pepe Climent_, he wanted to have something sober in order the user could focus more on the info and pictures displayed on the page.
 
 ## Typgography
+The font used on the page is *Inconsolata*. After conducting thorough research among many of the fonts provided by Google Fonts, we found that _Inconsolata_ was the one that best matched the physical menu that customers can find at the restaurant.
+
+## Logo
+The logo used in the header has been sourced from _Font Awesome_. Both my brother and I believe that a classic pot perfectly symbolizes the restaurant's principles. It represents traditional food meant to be enjoyed with a spoon, as the restaurant specializes in stews and rice dishes.
 
 ## Wireframes
 
@@ -113,11 +118,26 @@ The page administrator can access the _Admin Panel_ by entering their credential
 - Add a _*users profile page*_ where stored data can be edited.
 - Add a _*reviews section*_, where new and existing users can leave feedack and rate dishes, service, etc..
 - Add the functionality of _*online orders*_, where users can _place_ and _pick up_ their food orders.
+- Implement a plan of the restaurant so users can select an specific table.
+- Implement a system that notificates the user with an e-mail about new-reservations, updates, etc..
+
+## Features Not Included
+
+# Technologies Used
+The following technologies were used in order to develope and create this project:
+
+- Gitpod:
+- Github:
+- Heroku:
+- Cloudinary:
+- 
 
 
 # Tests
 
 ## Manual Testing:
+
+### USER:
 
 - **Sign Up**
 
@@ -228,6 +248,9 @@ Booking update submission | Upon successful entry, user should update the previo
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Booking delete submission | Confirm Delete | Open delete booking page in My Reservations and click on "Confirm Delete" | Pass | Pass |
+
+
+
 
 
 

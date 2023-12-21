@@ -3,13 +3,16 @@
 {% block content %}
 <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-6 mt-5">
-            <div class="card p-4">
-                <h1 class="mb-4"><i class="far fa-trash-alt"></i>
-                     Delete Reservation</h1>
-                <p>Are you sure you want to delete the reservation for <strong>{{ booking.name }}</strong> on
+        <div class="col-md-6 col-md-8 mt-5">
+            <div class="card p-4 align-items-center">
+                <div class="card p-2 text-center">
+                    <h1 class="mb-4"><i class="far fa-trash-alt"></i>
+                        Delete Reservation</h1>
+                </div>
+                <p class="text-center mt-4">Are you sure you want to delete the reservation for <strong>{{ booking.name }}</strong> on
                     <strong>{{ booking.date }}</strong> at
-                    <strong>{{ booking.start_time }}</strong>?</p>
+                    <strong>{{ booking.start_time }}</strong>for
+                    <strong>{{ booking.num_people }}</strong> pax?</p>
                 <form method="post">
                     {% csrf_token %}
                     <button type="submit" class="btn btn-danger mr-2">Confirm Delete</button>

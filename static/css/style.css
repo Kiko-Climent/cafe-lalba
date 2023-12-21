@@ -20,8 +20,8 @@
 
 .logged-user {
     font-weight: bold;
-    color: #333; /* Puedes ajustar el color según tus preferencias */
-    /* Otros estilos que desees agregar para resaltar el texto */
+    color: #333; 
+    
 }
 
 body {
@@ -48,7 +48,7 @@ footer {
 
 .callout-container {
     height: 100vh;
-    background: url(/static/images/guiso3.jpeg) no-repeat center center fixed;
+    background: url("https://res.cloudinary.com/dzlveh6fi/image/upload/v1703004295/static/images/guiso3.b41f6194ff9b.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -58,10 +58,6 @@ footer {
     align-items: center;
     justify-content: center;
 }
-
-.about-container {}
-
-.specials-container {}
 
 .reservation-list-container {
     display: flex;
@@ -226,7 +222,7 @@ footer {
 
 /* Style 404 Error page */
 .error-body {
-    background-image: url("https://res.cloudinary.com/dzlveh6fi/image/upload/v1703004319/static/images/tomates.4924a661dccf.jpg");
+    background-image: url("https://res.cloudinary.com/dzlveh6fi/image/upload/v1703004321/static/images/villajoyosa.04ba33f117c9.png");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -234,19 +230,24 @@ footer {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Inconsolata', monospace, sans-serif;
     color: #fff;
 }
 .error-container {
     text-align: center;
+    background-color: #ffffff8a;
 }
+.error-card {
+    background-color: #ffffff8a;
+}
+
 .error-heading {
     font-size: 4rem;
     margin-bottom: 20px;
-    color: #dc3545;
+    color: black;
 }
 .error-message {
     font-size: 1.5rem;
-    color: #6c757d;
+    color: black;
 }
 
