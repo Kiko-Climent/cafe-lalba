@@ -3,9 +3,9 @@
 {% block content %}
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card p-4 mt-4 align-items-center">
-                <h2 class="mb-4">
+        <div class="col-md-6 col-lg-10">
+            <div class="card p-4 m-4 align-items-center border-md-none border-0">
+                <h2 class="mb-4 text-center">
                     <i class="far fa-calendar-alt"></i>
                     Create a Booking</h2>
                 {% if error_message %}
@@ -27,7 +27,7 @@
                 {% endfor %}
                 {% endif %}
 
-                <form method="post" class="booking-form">
+                <form method="post" class="booking-form d-flex flex-column align-items-center">
                     {% csrf_token %}
                     {{ form.as_p }}
                     <button type="submit" class="btn btn-primary mt-3">Submit</button>
@@ -71,7 +71,7 @@
                     View Booking Rules
                 </button>
             </div>
-
+            
         </div>
     </div>
 </div>

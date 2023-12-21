@@ -219,7 +219,7 @@ Email | Should accept a valid email format | Enter a valid email format | Pass |
 Email | Should accept a valid email format | Enter an invalid email format (no '@') | Fail | Pass |
 Email | Should accept a valid email format | Enter blank fiel | Fail | Pass |
 Notes (NOT REQUIRED) | Should allow entering additional information | Enter text in the notes field | Pass | Pass |
-Notes (NOT REQUIRED) | Should allow entering additional information | Enter blank fiel | Fail | Pass |
+Notes (NOT REQUIRED) | Should allow entering additional information | Enter blank fiel | Pass | Pass |
 Booking submision | Upon successful entry, user should book a table | Completed the form and clicked 'Submit' button | Pass | Pass |
 
 - **Reservations / Reservations List**
@@ -249,8 +249,140 @@ Booking update submission | Upon successful entry, user should update the previo
 | --- | --- | --- | --- | --- |
 | Booking delete submission | Confirm Delete | Open delete booking page in My Reservations and click on "Confirm Delete" | Pass | Pass |
 
+___
+
+### ADMIN:
+
+- **Sign In**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+Username Field | Field should accept only admin user | Entered admin user | Pass | Pass |
+Username Field | Field should accept only admin user | Entered different user | Fail | Pass |
+Password Field | Field should accept only valid passwords | Entered invalid password | Fail | Pass |
+Password Field | Field should accept only valid passwords | Entered valid password | Pass | Pass |
+Sign-in submision | Upon successful entry, admin should be loged in | Completed the form and clicked 'Sign In' button | Pass | Pass |
+
+- **Log out**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Log out submission | Finish session | Click "log out" on top of panel admin | Pass | Pass |
+
+- **Reservations / Add Booking**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+Add Booking | Should redirect to add booking fields | Click on "Add Booking" | Pass | Pass |
+Name | Should accept valid letters, numbres and chracters | Enter only letters | Pass | Pass |
+Name | Should accept valid letters, numbres and chracters | Enter only numbers | Pass | Pass |
+Name | Should accept valid letters, numbres and chracters | Enter numbers & letters | Pass | Pass |
+Name | Should accept valid letters, numbres and chracters | Enter numbers & letters | Pass | Pass |
+Name | Should accept valid letters, numbres and chracters | Enter only characters | Pass | Pass |
+Name | Should accept valid letters, numbres and chracters | Enter numbers, letters & characters | Pass | Pass |
+Name | Should accept valid letters, numbres and chracters | Enter spacing | Fail | Pass |
+Name | Should accept valid letters, numbres and chracters | Enter blank field | Fail | Pass |
+Number of People | Should allow a maximum of 4 people | Enter 1, 2, 3 and 4 | Pass | Pass |
+Number of People | Should allow a maximum of 4 people | Enter blank field | Fail | Pass |
+Number of People | Should allow a maximum of 4 people | Enter -1 | Pass | Fail |
+Start Time | Should allow any time | Choose one of the available options in the restaurante rules | Pass | Pass |
+Start Time | Should allow any time | Choose any time of the day | Pass | Pass |
+Start Time | Shouldn't allow selection from available times in case fully booked | Choose one of the available options once is fully booked | Pass | Fail |
+End Time | Shouldnt allow to write a frametime before start time | Choose frametime after starttime | Pass | Pass |
+End Time | Shouldnt allow to write a frametime before start time | Choose frametime before starttime | Pass | Fail |
+End Time | Shouldnt allow to write a frametime before start time | Choose frametime after starttime but before the 1 hour window stablished| Pass | Fail |
+Date | Should only allow future dates | Select a future date | Pass | Pass |
+Date | Should only allow present and future dates | Select present day | Pass | Pass |
+Date | Should only allow future dates | Select a past date | Pass | Fail |
+Phone (NOT REQUIRED) | Should accept valid phone numbers | Enter numbers | Pass | Pass |
+Phone (NOT REQUIRED) | Should accept valid phone numbers | Enter letters | Pass | Fail |
+Phone (NOT REQUIRED) | Should accept valid phone numbers | Enter blank field | Pass | Pass |
+Email | Should accept a valid email format | Enter a valid email format | Pass | Pass |
+Email | Should accept a valid email format | Enter an invalid email format (no '@') | Fail | Pass |
+Email | Should accept a valid email format | Enter blank fiel | Fail | Pass |
+Notes (NOT REQUIRED) | Should allow entering additional information | Enter text in the notes field | Pass | Pass |
+Notes (NOT REQUIRED) | Should allow entering additional information | Enter blank fiel | Pass | Pass |
+User | Should allow to select a registered user | Select a registered user | Pass | Pass |
+User | Should allow to select a registered user | Cannot Select an unregistered user | Pass | Pass |
+Booking submision | Upon successful entry, admin should book a table | Completed the form and clicked 'Submit' button | Pass | Pass |
+
+- **Reservations/ Bookings / Update Booking**
+
+ _In the admin panel, booking section, click on one of the bookings. all the fields tested in the creation of a booking previously done, can be edited with same results._
+
+- **Reservations / Bookings / Delete Booking**
+
+ _In the admin panel, booking section, click on one of the bookings. on the bottom click on delete._
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+Delete | Should delete the selected booking | click on "Yes, im sure! | Delete booking | Pass | Pass |
+Cancel | Should take back to selected booking | click on "No, take me back" | Back to selected booking | Pass | Pass
+
+- **Contact / Contact Messages**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+Contact Messages | Should allow admin to view a list of messages | click "Contact Messages" | Pass | Pass |
+Delete Messages | Should allow to delete a selected message from user | click on "Action/Delete" after selecting a message from user | Pass | Pass |
+
+ _Should allow the admin to see the list of messages from users ordered by date and time, the result was a Pass_
+ _Should allow the admin to see order the list of messages from users either by subject or email or responded, the result was a Pass_
+ _Should allow the admin to filter the list of messages from users ordered by "responded", "not responded" or "all", the result was a Pass_
+
+- **Authentication and Authoritation / Users**
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+User Browser | Shold allow to search for an especific user | Search an existing user | Pass | Pass |
+User Browser | Shold allow to search for an especific user | Search an unexisting user | Fail | Pass |
+Delete User | Should allow to delete an existing user | Select a User and then "Action/Delete" | Pass | Pass |
+
+_Should allow the admin to see the list of registered users ordered by "Username", "Email"(if provided), "name" and "last name" the result was a Pass_
+
+- **Account / Email Addresses**
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+Email Browser | Shold allow to search for an especific email from a user | Search by email | Pass | Pass |
+Email Browser | Shold allow to search for an especific email from a user | Search by name | Pass | Pass |
+Action "Delete email" | Should allow to delete an email from a user | Select an email then click on "Action/Deete" | Pass | Pass |
+Action "Mark as verified" | Should allow to mark as verified an email from a user | Select an email then click on "Action/Mark as verified" | Pass | Pass |
+
+ 
 
 
+
+
+# Credits
+
+"For the creation of this project, I relied on some of Code Institute's 'Walkthrough Projects' such as 'I think, therefore i blog,' 'The whiskey blog,' and 'ResumeProject.'
+
+Official documentation from Django and Bootstrap has been crucial in implementing style on the website and coherence to the logic in views, models, and forms.
+
+Other websites that have provided me with significant support include 'Serhalter.com,' 'django.allouth,' 'strip.com,' 'css-tricks.com,' 'devhandbook,' and 'GeekforGeeks.'
+
+I made use of Artificial Intelligence for developing the logic of some functions.
+
+The YouTube channel 'Fazt' was also helpful in better understanding how to implement 'CRUD' in my 'Reservations' app.
+
+My great friend and programmer, 'Javier Fernandez,' also played a pivotal role in some of the functions of this project, helping me stay on the right track to complete this project.
+
+In order to create the README file, i found inspiration in markdaniel1982 "My Fishing adventures"
+
+Special mention to the tutors at Code Institute; without them, many of the elements present in my project wouldn't have been possible or would have taken me much longer to implement."
+
+___
+
+# Media
+
+All the photos included in the carousel of the "MENU" section belong to dishes cooked by my brother, "Pepe Climent," at the restaurant that gives its name to this project, "Cafeteria l'Alba."
+
+Due to the loss of many photos that my brother had stored on one of his computers, I was forced to collect photos from the internet to complete the project's content.
+
+The photo of garlic, tomatoes, and mortar on the about page belongs to "Jaume Pinet."
+The photo of our beloved town, "Sella," on the about page belongs to "Nacho Barco," extracted from his blog "Enamorados de Alicante."
+The photo on the 404 page was rescued from the website "Barcelo.com."
+The photo in the "callout" was taken from the page "Vacalia.com."
+The photo on "My Reservations" was taken from the website of the restaurant "La Malvaroca."
 
 
 
