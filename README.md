@@ -66,7 +66,7 @@ ___
 ## Colour Scheme
 The Colour Scheme used in this project was chosen after having a brainstorming with the owner of the restaurant, my brother _Pepe Climent_, he wanted to have something sober in order the user could focus more on the info and pictures displayed on the page.
 
-## Typgography
+## Typography
 The font used on the page is *Inconsolata*. After conducting thorough research among many of the fonts provided by Google Fonts, we found that _Inconsolata_ was the one that best matched the physical menu that customers can find at the restaurant.
 ![Typography](/media/Typography.png)
 
@@ -318,15 +318,35 @@ Messages are timestamped, displaying the date and time they were sent. | Add a s
 The interface provides options to mark messages as read/unread | Implement timestamp functionality for messages to display the date and time they were sent or received.
 Each message contains necessary details such as at least, email/contact, subject and message content. | Ensure the admin message interface is responsive and accessible across various devices (desktop, mobile, tablet).
 
-
-
-
-...
 ___
 
 # Tests
 
-## Validator Testings
+## Validation Testings
+
+### HTML & CSS
+
+- HTML: No errors were found after passing through the official [W3 Validator](/media/w3_validator.png)
+
+- CSS: Found this warning when passing the code through the [Jigsaw W3 Validator/Warning](/media/jigsaw_warning.png)
+in order to fix that, just changed the code to this [CSS fixed](/media/fixed_jigsaw.png)
+
+After thos changes no errors were found in the [Jogsaw W3 Validator](/media/jigsaw.png)
+
+### Python
+
+The only errors recieved here were where some lines of text exceeded the limit of 79 characters, but these have now been rectified.
+
+Python Files Tested:
+
+- Views
+- Forms
+- Models
+- Urls
+- Admin
+- Adapter
+
+
 
 
 
