@@ -20,8 +20,8 @@
 
 .logged-user {
     font-weight: bold;
-    color: #333; 
-    
+    color: #333;
+
 }
 
 body {
@@ -57,17 +57,18 @@ footer {
     align-items: center;
     justify-content: center;
 }
+
 /* Style Reservation List */
 .reservation-list-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh; 
+    height: 80vh;
     margin-top: 10vh;
-    background-image: url('/static/images/reservado3.jpeg');
+    background-image: url("https://res.cloudinary.com/dzlveh6fi/image/upload/v1703249334/static/images/reservado3.a98c0ae8dc2c.jpg");
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; 
+    background-attachment: fixed;
 }
 
 .col-reservation-list {
@@ -92,7 +93,7 @@ footer {
     font-weight: bold;
     color: black;
     font-size: large;
-       
+
 }
 
 .no-bookings {
@@ -140,12 +141,12 @@ footer {
 /* Style carousel */
 
 .carousel-item img {
-    max-width: 100%; 
+    max-width: 100%;
     max-height: 700px;
     height: 100%;
     width: 100%;
     object-fit: cover;
-    
+
 }
 
 /* Style booking form */
@@ -184,7 +185,7 @@ footer {
 
 /* Style success message */
 .success-container {
-    background-image: url('/static/images/guiso4.jpeg');
+    background-image: url("https://res.cloudinary.com/dzlveh6fi/image/upload/v1703249322/static/images/guiso4.ec5332a5f408.jpg");
     background-size: cover;
     height: 100vh;
     border-radius: 10px;
@@ -201,38 +202,19 @@ footer {
 }
 
 
-/* Style reservation list
-.reservation-list-container {
-    background-image: url('');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    padding: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
-
 .logout-page {
-    background-image: url('/static/images/room.png');
+    background-image: url("https://res.cloudinary.com/dzlveh6fi/image/upload/v1703249337/static/images/room.be959f35aece.png");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    height: 100vh; 
-    
+    height: 100vh;
+
 }
 
 .card-logout {
     background-color: #ffffffa6;
     margin-top: 20vh;
 }
-
-/*.card-reservations-list {
-    background-image: url('/static/images/reservations_book.jpeg'); 
-    background-size: cover;
-    background-attachment: fixed;
-    
-}*/
 
 /* Style 404 Error page */
 .error-body {
@@ -247,10 +229,12 @@ footer {
     font-family: 'Inconsolata', monospace, sans-serif;
     color: #fff;
 }
+
 .error-container {
     text-align: center;
     background-color: #ffffff8a;
 }
+
 .error-card {
     background-color: #ffffff8a;
 }
@@ -260,8 +244,8 @@ footer {
     margin-bottom: 20px;
     color: black;
 }
+
 .error-message {
     font-size: 1.5rem;
     color: black;
 }
-
