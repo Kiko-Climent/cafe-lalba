@@ -166,6 +166,10 @@ The page administrator can access the _Admin Panel_ by entering their credential
 ![Admin_Messages](/media/admin_messages.png)
 ![Admin_Bookings](/media/admin_bookings.png)
 
+## 404 Error Message:
+A custom _404_ error message was also implemented on this project
+![404](/media/404.png)
+
 ## Future Features:
 - Add a _*users profile page*_ where stored data can be edited.
 - Add a _*reviews section*_, where new and existing users can leave feedack and rate dishes, service, etc..
