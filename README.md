@@ -64,7 +64,7 @@ ___
 # Design
 
 ## Colour Scheme
-The Colour Scheme implemented on this project was implemented after having a brainstorming with the owner of the restaurant, my brother _Pepe Climent_, he wanted to have something sober in order the user could focus more on the info and pictures displayed on the page.
+The Colour Scheme used in this project was chosen after having a brainstorming with the owner of the restaurant, my brother _Pepe Climent_, he wanted to have something sober in order the user could focus more on the info and pictures displayed on the page.
 
 ## Typgography
 The font used on the page is *Inconsolata*. After conducting thorough research among many of the fonts provided by Google Fonts, we found that _Inconsolata_ was the one that best matched the physical menu that customers can find at the restaurant.
@@ -200,6 +200,126 @@ ___
 # Agile
 
 An _Agile_ metodology was implemented in order to develope this project. _Project Board_ and _Issues_ in *GitHub* were used.
+
+- [Project Board](https://github.com/users/Kiko-Climent/projects/6/views/1)
+
+The following *User Stories* were followed to develope the whole site.
+
+- *User Registration*
+
+As a Site User i can Register so that i can book a table, order food and be updated with new adds on the menu
+
+| Acceptance Criteria | Tasks |
+| --- | --- |
+Users should be able to create a new account by providing at least username, and password. | Create the user interface for the registration form.
+User account information (name, email, password) should be securely stored in the database.| Develop a secure storage system for account information.
+The registration process should be intuitive and provide appropriate feedback for errors or success. | Establish the login flow after successful registration.
+After successful registration, users should be able to log in using the newly created credentials. | Create feedback messages for different states of the registration process (success, errors, etc.).
+
+- *Contact*
+
+As a Site User i can Contact the restaurant so that i can be in touch with them
+
+| Acceptance Criteria | Tasks |
+| --- | --- |
+There should be a contact form accessible to all users on the restaurant's website. | Create the user interface for the contact form with fields for name, email, subject, and message.
+Form submission should validate required fields and display appropriate error messages for any missing or incorrectly formatted information. | Develop validation logic for the contact form fields to ensure required information is provided and in the correct format.
+Submission of the form should trigger the contact message to the restaurant. | Create a confirmation message to be displayed to users upon successful form submission, indicating that their message has been sent.
+After successful submission, users should receive a confirmation message indicating that their message has been sent to the restaurant. | Incorporate the contact form into the website, making sure it is prominently placed and easily accessible for site users.
+
+- *Reservations:*
+
+As a Site User i can book a table so that i have no problems of space when i visit the restaurant
+
+| Acceptance Criteria | Tasks |
+| --- | --- |
+Users can select date, time, and number of guests for a reservation. | Develop backend logic to check and confirm availability based on selected date, time, and capacity.
+Users receive immediate feedback on successful/unsuccessful booking attempts. | Implement a cancellation feature with appropriate validation.
+The system must confirm booking availability based on selected date and time. | Design and implement a user-friendly interface for creating bookings.
+Users can leave additional notes | --- |
+
+- *Booking Confirmation*
+
+As a Site User i can get a Confirmation so that im sure that my request has been received
+
+| Acceptance Criteria | Tasks |
+| --- | --- |
+Users receive an immediate confirmation message or email upon successful booking. | Implement a notification system to immediately confirm successful bookings.
+Include reservation details in the confirmation communication (date, time, number of guests). | --- |
+
+- *Update/Cancel Booking:*
+
+As a Site User i can update my bookings so that i can change the info i sent previously in case of an unexpected issue, or cancel an existing booking.
+
+| Acceptance Criteria | Tasks |
+| --- | --- |
+Users can modify details of an existing reservation (date, time, number of guests). | Develop an interface allowing users to modify their existing reservations.
+Changes should reflect in the system immediately upon confirmation. | Implement backend logic to handle changes in reservation details.
+Users receive a confirmation notification or email after successfully updating a booking. | Ensure real-time synchronization of updated information in the system.
+Users can delete an existing booking. | Alert the user confirming successful updates to bookings.
+
+- *Restaurant Menu:*
+
+As a Site User i can see the Menu so that i know what kind of food the restaurant hast to offer
+
+| Acceptance Criteria | Tasks |
+| --- | --- |
+Upon visiting the restaurant's website or app, the menu should be easily accessible from the main navigation. | Design an intuitive and visually appealing menu layout.
+Each menu item should have a name, description, and price listed. | Enter all menu items with their respective names, descriptions, and prices into the system.
+Ensure the menu is readable and accessible across various devices (desktop, mobile, tablet). | Incorporate images or icons for menu items where appropriate and visually enriching.
+
+- *Location & Opening Times:*
+
+As a Site User, I want to view the location of the restaurant and its opening times so that I can plan my visit accordingly.
+
+| Acceptance Criteria | Tasks |
+| --- | --- |
+Users should be able to access a page displaying the restaurant's location on a map. | Develop a section that shows the opening hours for each day of the week in a clear and organized format.
+The map should provide clear directions to the restaurant's physical address. | Implement an API or iframe to embed an interactive map showing the restaurant's address and provide navigational support
+The opening times for each day of the week should be visible and easily understandable. | --- |
+
+- *Style:*
+
+As a Site User i can have an atractive style on the page so that i can have a great user experience
+
+| Acceptance Criteria | Tasks |
+| --- | --- |
+The page should have an aesthetically pleasing design with visually appealing elements (colors, fonts, layouts, etc.). | Develop a style guide that defines the chosen aesthetics, including color palettes, typography, iconography, and UI components.
+It should reflect a consistent and coherent visual style across all sections of the page. | Implement the chosen style across the user interface, applying design elements to various sections of the page.
+The style should be responsive, ensuring a good user experience across various devices. | Ensure responsiveness by testing the style on different devices and screens, making adjustments as needed to optimize the user experience.
+The chosen style should enhance usability, making navigation intuitive and content easily readable. | Review the style to ensure it meets accessibility standards, making adjustments for better accessibility if required.
+
+- *Data from User:*
+
+As a Site Admin i can see contact details so that i can send them a message in case of any issue
+
+| Acceptance Criteria | Tasks |
+| --- | --- |
+The admin panel should display a section specifically dedicated to viewing user contact details. | Create a dedicated section in the admin dashboard to display user contact details.
+Contact details should include at least the user's name, email, and optionally a phone number if provided during registration. | Develop functionality allowing Site Admins to search and filter contact details based on various parameters like name, date range, or user type.
+
+- *Number of Reservations:*
+
+As a Site Admin i can see the number of bookings so that i can do a better organization
+
+| Acceptance Criteria | Tasks |
+| --- | --- |
+The admin dashboard displays an overview of reservations | Implement restrictions to prevent overbooking or exceedance of set limits.
+Reservation numbers update in real-time on the admin dashboard as users make bookings or cancel reservations. | Implement a robust data backup system to ensure reservation records are secure
+
+- *Read messages from Users:*
+
+As a Site Admin  i can read messages from guests so that i'm in touch in case of any issue.
+
+| Acceptance Criteria | Tasks |
+| --- | --- |
+
+Messages are timestamped, displaying the date and time they were sent. | Add a section in the admin dashboard to display received messages.
+The interface provides options to mark messages as read/unread | Implement timestamp functionality for messages to display the date and time they were sent or received.
+Each message contains necessary details such as at least, email/contact, subject and message content. | Ensure the admin message interface is responsive and accessible across various devices (desktop, mobile, tablet).
+
+
+
 
 ...
 ___
