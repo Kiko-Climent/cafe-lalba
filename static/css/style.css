@@ -48,11 +48,7 @@ footer {
 .callout-container {
     height: 100vh;
     background: url("https://res.cloudinary.com/dzlveh6fi/image/upload/v1703004295/static/images/guiso3.b41f6194ff9b.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -115,7 +111,7 @@ footer {
 }
 
 .lead {
-    font-size: x-large;
+    font-size: xx-large;
     font-weight: bold;
     color: black;
 }
@@ -200,7 +196,6 @@ footer {
     color: green;
     margin-bottom: 0;
 }
-
 
 .logout-page {
     background-image: url("https://res.cloudinary.com/dzlveh6fi/image/upload/v1703249337/static/images/room.be959f35aece.png");

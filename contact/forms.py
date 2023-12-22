@@ -8,15 +8,17 @@ from django.utils.translation import ugettext_lazy as _
 
 User = get_user_model()
 
+
 class ContactForm(forms.ModelForm):
     class Meta:
         model = ContactMessage
         fields = ['name', 'subject', 'email', 'notes']
 
+
 class CustomSignupForm(AllauthSignupForm):
     first_name = forms.CharField(max_length=30, label=_('First Name'))
     last_name = forms.CharField(max_length=30, label=_('Last Name'))
- 
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['email'].required = True
@@ -27,6 +29,7 @@ class CustomSignupForm(AllauthSignupForm):
         user.last_name = self.cleaned_data['last_name']
         user.save()
         return user
+
 
 class CustomLoginForm(AuthenticationForm):
     def clean(self):

@@ -1,5 +1,5 @@
 # CAFETERIA L'ALBA
-![Cafeteria l'Alba]()
+![Cafeteria l'Alba](/media/mockups.png)
 Portfolio 4 project as part of the Diploma in Full Stack Software Development by Code Institute.
 ___
 
@@ -11,7 +11,7 @@ Today, my brother, *Jose Climent*, manages the restaurant, offering customers a 
 
 Due to the deep family roots connecting me to this establishment, working on this project has held a very special significance for me.
 
-Link to live site - []
+Link to live site - [https://cafe-lalba-08ae328c9609.herokuapp.com/]
 
 ___
 
@@ -177,18 +177,38 @@ A custom _404_ error message was also implemented on this project
 - Implement a plan of the restaurant so users can select an specific table.
 - Implement a system that notificates the user with an e-mail about new-reservations, updates, etc..
 
-## Features Not Included
+___
 
 # Technologies Used
-The following technologies were used in order to develope and create this project:
 
-- Gitpod:
-- Github:
-- Heroku:
-- Cloudinary:
+- [Gitpod](https://www.gitpod.io/) To create and develope this project.
+- [Github](https://github.com/) To store and host the data for the site.
+- [Heroku](https://id.heroku.com/) To deploy the project.
+- [Cloudinary](https://cloudinary.com/) To storage some images used in the project
+- [ElephandSQL](https://www.elephantsql.com/) Used to store PostgreSQL database. 
 
+# Programming Languages, Frameworks and Libraries Used
+
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics)
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+- [Django](https://www.djangoproject.com/)
+- [Bootstrap](https://getbootstrap.com/)
+
+___
+
+# Agile
+
+An _Agile_ metodology was implemented in order to develope this project. _Project Board_ and _Issues_ in *GitHub* were used.
+
+...
+___
 
 # Tests
+
+## Validator Testings
+
+
 
 ## Manual Testing:
 
@@ -407,11 +427,12 @@ Action "Mark as verified" | Should allow to mark as verified an email from a use
  _Should allow the admin to see the list of emails from registered users ordered by "Username", "Primary" and "verified", the result was a Pass_
  _Should allow the admin to filter the list of messages from users by "Primary" and "verified" , the result was a Pass_
 
+___
 
- 
+# Bugs
 
-
-
+...
+___
 
 # Credits
 
