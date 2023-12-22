@@ -34,7 +34,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['8000-kikocliment-cafelalba-8hp62awscww.ws-eu107.gitpod.io', 'cafe-lalba-08ae328c9609.herokuapp.com']
 
-GOOGLE_MAPS_API_KEY = os.environ.get('GOOGLE_MAPS_API_KEY')
 
 # Application definition
 
@@ -112,13 +111,6 @@ WSGI_APPLICATION = 'lalba.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))

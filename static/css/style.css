@@ -29,7 +29,7 @@ body {
 }
 
 main {
-    margin-top: 56px;
+    margin-top: 75px;
     margin-bottom: 72px;
 }
 
@@ -45,7 +45,6 @@ footer {
 }
 
 /* Style Containers */
-
 .callout-container {
     height: 100vh;
     background: url("https://res.cloudinary.com/dzlveh6fi/image/upload/v1703004295/static/images/guiso3.b41f6194ff9b.jpg") no-repeat center center fixed;
@@ -58,7 +57,7 @@ footer {
     align-items: center;
     justify-content: center;
 }
-
+/* Style Reservation List */
 .reservation-list-container {
     display: flex;
     justify-content: center;
@@ -85,7 +84,21 @@ footer {
     font-size: 1.75rem;
     color: black;
     font-weight: bold;
-    background-color: #ffffffa1;
+    background-color: #ffffff9c;
+}
+
+.list-group-item {
+    background-color: #ffffff9c;
+    font-weight: bold;
+    color: black;
+    font-size: large;
+       
+}
+
+.no-bookings {
+    color: black;
+    font-size: x-large;
+    background-color: #ffffff9c;
 }
 
 /* Style Jumbotron */
@@ -184,6 +197,7 @@ footer {
 .alert-success {
     background-color: #d4eddabf;
     color: green;
+    margin-bottom: 0;
 }
 
 

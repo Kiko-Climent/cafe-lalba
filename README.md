@@ -68,51 +68,103 @@ The Colour Scheme implemented on this project was implemented after having a bra
 
 ## Typgography
 The font used on the page is *Inconsolata*. After conducting thorough research among many of the fonts provided by Google Fonts, we found that _Inconsolata_ was the one that best matched the physical menu that customers can find at the restaurant.
+![Typography](/media/Typography.png)
 
 ## Logo
-The logo used in the header has been sourced from _Font Awesome_. Both my brother and I believe that a classic pot perfectly symbolizes the restaurant's principles. It represents traditional food meant to be enjoyed with a spoon, as the restaurant specializes in stews and rice dishes.
+The logo used in the header has been sourced from _Flaticon_. Both my brother and I believe that a classic pot perfectly symbolizes the restaurant's principles. It represents traditional food meant to be enjoyed with a spoon, as the restaurant specializes in stews and rice dishes.
+![Logo](/media/logo.png)
 
 ## Wireframes
 
 ## Flow Diagram
+Here can be found the 2 diagrams showing the possible flow from both, _User_ and _Admin_
+![User Diagram](/media/user_diagram.jpeg) ![Admin Diagram](/media/admin_diagram.jpeg)
 
 ## Database Plan
+Concerning the _Database Plan_ this is very straighforward,using a _Foreign Key_ to link data from user...
+![Data Base Plan](/media/data_base_plan.png)
 
 ___
 
 # Features
 
+## Home Page:
+The first place users land, the main page or _Landing Page_, already features a _call-to-action_ where users have the option to directly navigate to the _Reservations page_, the website's primary functionality.
+![Home Page](/media/home.png)
+
+## Navegation:
+The _Navigation bar_ displays all the options that can be selected by the user. In addition to the previously mentioned reservation functionality, the user can access the restaurant _Menu_, a _Contact form_, and of course, the section to input their _Credentials_. An _About_ section is also available, along with a brief quote showcasing the year the restaurant was inaugurated. Also once the user has been _logged in_, an _Alert_ triggers informing the user and a _Log in panel_ shows in the navbar.
+![Navbar](/media/navbar.png) ![Navbar2](/media/navbar_logged.png) ![Navbar_small](/media/navbar_small.png) ![Navbar_small2](/media/navbar_small_alert.png)
+
+## About:
+The _About_ section introduces the user to the principles and foundations of the restaurant.
+![About](/media/about2.png) ![About_small](/media/about.png)
+
+## Menu: 
+Concerning the _Menu_ section, the user can have access to the treats that the restaurant offers. Along with it, a _Pictures Carousel_ with some of the dishes is diplayed at the bottom.
+![Menu](/media/menu.png) ![Carousel](/media/carousel.png)
+
 ## Registration:
-The user can create an account:
-[]
+The user will need to _Sign Up_ if he wants to have access to the _Reservation_ functionality
+![Sign_up](/media/sign_up.png)
 
 ## Book a table:
 Once the account has been created, the user is alowed to place a booking.
-[]
+![New_Booking](/media/new_booking.png)
+
+A _Modal_ has been introduced in order to inform the user about the reservation rules:
+![Reservation_Rules](/media/modal.png)
+
+If the data introduced is correct a confirmation message with the booking details displays on the screen
+![Reservation_Details](/media/reservation_details.png)
+
+In case of wrong data introduced such as, date in the past, or restaurant fully booked for the selected hour, an _alert_ triggers informing the user
+![Wrong_data](/media/wrong_data_booking.png)
+
+## My Bookings / Reservation List:
+Users registered can have access to all the bookings made, 2 buttong displays in the list, having the possibility of _Update_ or _Delete_ an existing booking.
+![Reservations_List](/media/reservations_list.png)
 
 ## Update Booking:
 If the user whishes, the booking could be update it.
-[]
+![Update_Booking](/media/update_booking.png)
+
+An _alert_ will be shown in the _reservations list section_ in case of a succesfull booking.
+![Update_success](/media/update_succesful.png)
+
+In the other hand, if the data introduced for the update s wrong, the user will be informed,forcing him to introduce new data for the update
+![Update_wrong](/media/update_wrong.png)
 
 ## Delete Booking:
 Of ocurse the possibity of removing the booking is also allowed.
-[]
+![Delete_Booking](/media/delete_booking.png.png)
 
-## My Bookings:
-A detailed list of past and future bookings from the user is also possible to visit under "My Reservations"
-[]
+Once deleted, the user will be informed in the reservation list.
+![Successful_Delete](/media/successful_delete.png)
 
-## Log in / Log out:
+## Log in:
 The user is allowed to log into his account in order to make use of the functionalities of the restaurant, *Create a New Booking, Update it or Delete it*
-[]
+![Sign_in](/media/sign_in.png)
 
-## Contact Form:
-Both _New_ and _Existing_ users can contact the administrator for inquiries without the need for user validation to access this feature.
-[]
+## Log out:
+Here the booking can finish his session.
+![Sign_Out](/media/sign_out.png)
+
+## Contact Section:
+Both _New_ and _Existing_ users can contact the administrator for inquiries without the need for user validation to access this feature. Also, in order to help the user with the  restaurant _Location_, a map with the address is implemented, along with the _Openning Times_
+![Contact](/media/contact_form.png) ![Location](/media/contact_location.png)
+
+Once the message has been sent, an alert triggers giving the possibility of being redirected to _Home_ page.
+![Message_Sent](/media/message_succefully.png)
 
 ## Admin Panel:
-The page administrator can access the _Admin Panel_ by entering their credentials. Within this panel, he will find a comprehensive dashboard displaying _Information_ from Users, _Bookings_, and _Messages_.
-[]
+The page administrator can access the _Admin Panel_ by entering their credentials. Within this panel, he will find a comprehensive dashboard displaying _Information_ from Users,_Email Addresses_, _Bookings_, and _Messages_.
+
+![Admin_Panel](/media/admin_panel.png)
+![Admin_Users](/media/admin_users.png)
+![Admin_Emails](/media/admin_email.png)
+![Admin_Messages](/media/admin_messages.png)
+![Admin_Bookings](/media/admin_bookings.png)
 
 ## Future Features:
 - Add a _*users profile page*_ where stored data can be edited.
@@ -130,7 +182,6 @@ The following technologies were used in order to develope and create this projec
 - Github:
 - Heroku:
 - Cloudinary:
-- 
 
 
 # Tests
@@ -331,21 +382,27 @@ Delete Messages | Should allow to delete a selected message from user | click on
  _Should allow the admin to filter the list of messages from users ordered by "responded", "not responded" or "all", the result was a Pass_
 
 - **Authentication and Authoritation / Users**
+
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 User Browser | Shold allow to search for an especific user | Search an existing user | Pass | Pass |
 User Browser | Shold allow to search for an especific user | Search an unexisting user | Fail | Pass |
 Delete User | Should allow to delete an existing user | Select a User and then "Action/Delete" | Pass | Pass |
 
-_Should allow the admin to see the list of registered users ordered by "Username", "Email"(if provided), "name" and "last name" the result was a Pass_
+ _Should allow the admin to see the list of registered users ordered by "Username", "Email"(if provided), "name" and "last name", the result was a Pass_
 
 - **Account / Email Addresses**
+
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 Email Browser | Shold allow to search for an especific email from a user | Search by email | Pass | Pass |
 Email Browser | Shold allow to search for an especific email from a user | Search by name | Pass | Pass |
 Action "Delete email" | Should allow to delete an email from a user | Select an email then click on "Action/Deete" | Pass | Pass |
 Action "Mark as verified" | Should allow to mark as verified an email from a user | Select an email then click on "Action/Mark as verified" | Pass | Pass |
+
+ _Should allow the admin to see the list of emails from registered users ordered by "Username", "Primary" and "verified", the result was a Pass_
+ _Should allow the admin to filter the list of messages from users by "Primary" and "verified" , the result was a Pass_
+
 
  
 
