@@ -3,17 +3,18 @@ from django.core.mail import send_mail
 from .models import ContactMessage
 
 
+# Customizing the admin view for ContactMessage
 class ContactMessageAdmin(admin.ModelAdmin):
     list_display = ['timestamp', 'subject', 'email', 'responded']
     list_filter = ['responded']
     readonly_fields = ['timestamp', 'email']
-
+    # Define fieldsets for the admin panel
     fieldsets = (
         (None, {
             'fields': ('timestamp', 'subject', 'email', 'responded', 'notes')
         }),
         ('Admin Response', {
-            'fields': ('admin_response',),  # Add respone field to admin panel
+            'fields': ('admin_response',),
             'classes': ('wide', 'extrapretty'),
         }),
     )

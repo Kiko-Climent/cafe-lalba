@@ -3,7 +3,10 @@ from django.forms.widgets import DateInput
 from .models import Booking
 from datetime import time, date
 
+
 """Create New Booking Form"""
+
+
 class BookingForm(forms.ModelForm):
     num_people = forms.IntegerField(
         label='Number of People',
@@ -31,7 +34,10 @@ class BookingForm(forms.ModelForm):
 
     class Meta:
         model = Booking
-        fields = ['name', 'num_people', 'start_time', 'date', 'phone', 'email', 'notes']
+        fields = [
+            'name', 'num_people', 'start_time',
+            'date', 'phone', 'email', 'notes'
+        ]
 
     def clean(self):
         cleaned_data = super().clean()
@@ -40,22 +46,23 @@ class BookingForm(forms.ModelForm):
 
         if date < date.today():
             raise forms.ValidationError("Cannot select a date in the past.")
-        
         if date == date.today():
-            raise forms.ValidationError("Reservations for today are not allowed.")
-            
+            raise forms.ValidationError(
+                "Reservations for today are not allowed.")
         if start_time and date:
             conflicting_bookings = Booking.objects.filter(
                 start_time=start_time,
                 date=date
             )
             if conflicting_bookings.count() >= 6:
-                raise forms.ValidationError("Exceeded maximum bookings for this hour.")
-        
+                raise forms.ValidationError(
+                    "Exceeded maximum bookings for this hour.")
         return cleaned_data
-    
+
 
 """ Form to update an existing booking"""
+
+
 class BookingUpdateForm(forms.ModelForm):
     num_people = forms.IntegerField(
         label='Number of People',
@@ -95,20 +102,24 @@ class BookingUpdateForm(forms.ModelForm):
 
         if date == date.today():
             raise forms.ValidationError(
-                "Reservations for today cannot be updated, please get in touch with the restaurant")            
-            
+                "Reservations for today cannot be updated, "
+                "please get in touch with the restaurant")
         if start_time and date:
             conflicting_bookings = Booking.objects.filter(
                 start_time=start_time,
                 date=date
             )
             if conflicting_bookings.exclude(id=self.instance.id).count() >= 6:
-                raise forms.ValidationError("Exceeded maximum bookings for this hour.")
-        
+                raise forms.ValidationError(
+                    "Exceeded maximum bookings for this hour.")
         return cleaned_data
 
     """make update booking not be able to reserve a table in the past"""
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['date'].widget = DateInput(attrs={'type': 'date', 'min': str(date.today())})
-       
+        self.fields['date'].widget = DateInput(
+            attrs={
+                'type': 'date',
+                'min': str(date.today())
+            }
+        )

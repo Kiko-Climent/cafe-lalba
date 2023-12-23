@@ -2,8 +2,11 @@ from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime, timedelta
 
+# Define the opening hour for bookings
 OPENING_HOUR = datetime.strptime("18:00", "%H:%M").time()
 
+
+# Booking model for reservations
 class Booking(models.Model):
     name = models.CharField(max_length=150)
     num_people = models.IntegerField()
@@ -17,7 +20,9 @@ class Booking(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.end_time:
-            self.end_time = (datetime.combine(self.date, self.start_time) + timedelta(hours=1)).time()
+            self.end_time = (
+                datetime.combine(self.date, self.start_time) + timedelta(
+                    hours=1)).time()
         super().save(*args, **kwargs)
 
     def __str__(self):
