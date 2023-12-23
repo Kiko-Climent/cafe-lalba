@@ -335,6 +335,9 @@ After thos changes no errors were found in the [Jogsaw W3 Validator](/media/jigs
 
 ### Python
 
+- Python pep8 validation was done via [Code Institute's Python Linter](https://pep8ci.herokuapp.com/)
+
+
 The only errors recieved here were where some lines of text exceeded the limit of 79 characters, but these have now been rectified.
 
 Python Files Tested:
@@ -346,9 +349,7 @@ Python Files Tested:
 - Admin
 - Adapter
 
-
-
-
+___
 
 ## Manual Testing:
 
@@ -571,7 +572,19 @@ ___
 
 # Bugs
 
-...
+## Unsolved Bugs:
+
+In the _Sign Up_ form section, the email field appears as optional; however, it's actually a mandatory field. I attempted to modify it to remove the field's optional status, but due to time constraints and concern about potentially altering the "Allauth" forms, I opted not to proceed with the changes.
+
+Within the _Admin Panel_, several bugs were discovered that could potentially be resolved with the creation of a custom admin panel. The data received in the admin panel can be edited in peculiar ways. For instance, it allows changing the number of people for a reservation to negative numbers or altering the reservation date to a past day. This should be modified to ensure that the administrator faces the same constraints as a regular user when editing a reservation in the admin panel.
+
+Additionally, within the admin panel, the administrator shouldn't be able to change the name of the user who made a reservation.
+
+On the _User_ side, the process of making a new reservation could also be enhanced by eliminating the need for users to input their email. Instead, it could be directly linked to their username. This change would significantly improve the user experience.
+
+## Solved Bugs:
+
+In the _HOME_ section, I implemented a Bootstrap alert timeout that was supposed to disappear after 3 seconds upon successful login or logout. However, despite making various changes in the code, none of them proved effective. It was odd because initially, when I added it during the project's early stages, the timeout functioned perfectly. To ensure it didn't impact the user experience, I added a tab at the top of the alert so that users could manually close the alert themselves.
 ___
 
 # Credits
@@ -605,20 +618,3 @@ The photo of our beloved town, "Sella," on the about page belongs to "Nacho Barc
 The photo on the 404 page was rescued from the website "Barcelo.com."
 The photo in the "callout" was taken from the page "Vacalia.com."
 The photo on "My Reservations" was taken from the website of the restaurant "La Malvaroca."
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
